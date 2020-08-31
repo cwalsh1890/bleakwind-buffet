@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 namespace Data.Drinks {
-	class AretinoAppleJuice {
+	class ArentinoAppleJuice {
 		/// <summary>
 		/// holds size of the drink
 		/// </summary>
@@ -88,7 +88,7 @@ namespace Data.Drinks {
 		/// </summary>
 		/// <returns>drink size then drink name</returns>
 		public override string ToString() {
-			return $"{Enum.GetName(typeof(Size), size)} Aretino Apple Juice";
+			return $"{Enum.GetName(typeof(Size), size)} Arentino Apple Juice";
 		}
 	}
 }
