@@ -43,7 +43,7 @@ namespace Data.Drinks {
 				if (value != ice) {
 					if (value) {
 						ice = true;
-						specialInstructionss.Remove("Hold ice");
+						specialInstructions.Remove("Hold ice");
 					}
 					else {
 						ice = false;
