@@ -8,7 +8,7 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 
-namespace Data.Drinks {
+namespace BleakwindBuffet.Data.Drinks {
 	class CandlehearthCoffee {
 		/// <summary>
 		/// holds the size of the coffee

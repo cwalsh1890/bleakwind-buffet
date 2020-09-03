@@ -8,7 +8,7 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 
-namespace Data.Sides {
+namespace BleakwindBuffet.Data.Sides {
 	class VokunSalad {
 		/// <summary>
 		/// holds the size of the side

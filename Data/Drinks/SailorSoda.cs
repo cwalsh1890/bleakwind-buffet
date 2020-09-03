@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Data.Drinks {
+namespace BleakwindBuffet.Data.Drinks {
 	class SailorSoda {
 		/// <summary>
 		/// holds the size of the drink

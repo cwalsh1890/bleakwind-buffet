@@ -7,7 +7,7 @@
 using System.Collections.Generic;
 
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
 	class GardenOrcOmelette
 	{
