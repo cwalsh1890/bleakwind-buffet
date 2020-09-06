@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	class GardenOrcOmelette
+	public class GardenOrcOmelette
 	{
 		/// <summary>
 		/// holds whether or not the omelette should have broccoli
@@ -18,13 +18,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Broccoli {
 			get { return this.broccoli; }
 			set {
-				if (value) {
-					broccoli = true;
-					specialInstructions.Remove("Hold broccoli");
-				}
-				else {
-					broccoli = false;
-					specialInstructions.Add("Hold broccoli");
+				if (value != broccoli) {
+					if (value) {
+						broccoli = true;
+						specialInstructions.Remove("Hold broccoli");
+					}
+					else {
+						broccoli = false;
+						specialInstructions.Add("Hold broccoli");
+					}
 				}
 			}
 		}
@@ -36,13 +38,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Mushrooms {
 			get { return this.mushrooms; }
 			set {
-				if (value) {
-					mushrooms = true;
-					specialInstructions.Remove("Hold mushrooms");
-				}
-				else {
-					mushrooms = false;
-					specialInstructions.Add("Hold mushrooms");
+				if (value != mushrooms) {
+					if (value) {
+						mushrooms = true;
+						specialInstructions.Remove("Hold mushrooms");
+					}
+					else {
+						mushrooms = false;
+						specialInstructions.Add("Hold mushrooms");
+					}
 				}
 			}
 		}
@@ -54,13 +58,35 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Tomato {
 			get { return this.tomato; }
 			set {
-				if (value) {
-					tomato = true;
-					specialInstructions.Remove("Hold tomato");
+				if (value != tomato) {
+					if (value) {
+						tomato = true;
+						specialInstructions.Remove("Hold tomato");
+					}
+					else {
+						tomato = false;
+						specialInstructions.Add("Hold tomato");
+					}
 				}
-				else {
-					tomato = false;
-					specialInstructions.Add("Hold tomato");
+			}
+		}
+
+		/// <summary>
+		/// holds whether or not the omelette should have tomato
+		/// </summary>
+		private bool cheddar = true;
+		public bool Cheddar {
+			get { return this.cheddar; }
+			set {
+				if (value != cheddar) {
+					if (value) {
+						cheddar = true;
+						specialInstructions.Remove("Hold cheddar");
+					}
+					else {
+						cheddar = false;
+						specialInstructions.Add("Hold cheddar");
+					}
 				}
 			}
 		}
@@ -68,12 +94,12 @@ namespace BleakwindBuffet.Data.Entrees
 		/// <summary>
 		/// hoodsl the price of the omelette
 		/// </summary>
-		public double price { get; } = 4.57;
+		public double Price { get; } = 4.57;
 
 		/// <summary>
 		/// holds the calories of the omelette
 		/// </summary>
-		public uint calories { get; } = 404;
+		public uint Calories { get; } = 404;
 
 		/// <summary>
 		/// holds any special instructions for the omelette

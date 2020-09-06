@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	class SmokehouseSkeleton
+	public class SmokehouseSkeleton
 	{
 		/// <summary>
 		/// holds whether or not the plate should have sausage links
@@ -17,13 +17,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool SausageLink {
 			get { return this.sausageLink; }
 			set {
-				if (value) {
-					sausageLink = true;
-					specialInstructions.Remove("Hold sausage link");
-				}
-				else {
-					sausageLink = false;
-					specialInstructions.Add("Hold sausage link");
+				if (value != sausageLink) {
+					if (value) {
+						sausageLink = true;
+						specialInstructions.Remove("Hold sausage");
+					}
+					else {
+						sausageLink = false;
+						specialInstructions.Add("Hold sausage");
+					}
 				}
 			}
 		}
@@ -35,13 +37,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Egg {
 			get { return this.egg; }
 			set {
-				if (value) {
-					egg = true;
-					specialInstructions.Remove("Hold egg");
-				}
-				else {
-					egg = false;
-					specialInstructions.Add("Hold egg");
+				if (value != egg) {
+					if (value) {
+						egg = true;
+						specialInstructions.Remove("Hold eggs");
+					}
+					else {
+						egg = false;
+						specialInstructions.Add("Hold eggs");
+					}
 				}
 			}
 		}
@@ -53,13 +57,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool HashBrowns {
 			get { return this.hashBrowns; }
 			set {
-				if (value) {
-					hashBrowns = true;
-					specialInstructions.Remove("Hold hash browns");
-				}
-				else {
-					hashBrowns = false;
-					specialInstructions.Add("Hold hash browns");
+				if (value != hashBrowns) {
+					if (value) {
+						hashBrowns = true;
+						specialInstructions.Remove("Hold hash browns");
+					}
+					else {
+						hashBrowns = false;
+						specialInstructions.Add("Hold hash browns");
+					}
 				}
 			}
 		}
@@ -71,13 +77,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Pancake {
 			get { return this.pancake; }
 			set {
-				if (value) {
-					pancake = true;
-					specialInstructions.Remove("Hold pancake");
-				}
-				else {
-					pancake = false;
-					specialInstructions.Add("Hold pancake");
+				if (value != pancake) {
+					if (value) {
+						pancake = true;
+						specialInstructions.Remove("Hold pancakes");
+					}
+					else {
+						pancake = false;
+						specialInstructions.Add("Hold pancakes");
+					}
 				}
 			}
 		}
@@ -85,12 +93,12 @@ namespace BleakwindBuffet.Data.Entrees
 		/// <summary>
 		/// holds price for the plate
 		/// </summary>
-		public double price { get; } = 5.62;
+		public double Price { get; } = 5.62;
 
 		/// <summary>
 		/// holds calories for the plate
 		/// </summary>
-		public uint calories { get; } = 602;
+		public uint Calories { get; } = 602;
 
 		/// <summary>
 		/// holds any special instructions for the plate

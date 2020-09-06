@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Coby Walsh
- * Class name: AretinoAppleJuice.cs
+ * Class name: SailorSoda.cs
  * Purpose: Class used to represent soda in order
  */
 
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 
 namespace BleakwindBuffet.Data.Drinks {
-	class SailorSoda {
+	public class SailorSoda {
 		/// <summary>
 		/// holds the size of the drink
 		/// </summary>

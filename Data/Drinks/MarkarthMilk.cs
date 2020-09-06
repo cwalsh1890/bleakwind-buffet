@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Coby Walsh
- * Class name: AretinoAppleJuice.cs
+ * Class name: MarkarthMilk.cs
  * Purpose: Class used to represent Milk in order
  */
 
@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Drinks {
-	class MarkarthMilk {
+	public class MarkarthMilk {
 		
 		/// <summary>
 		/// holds the size of the drink

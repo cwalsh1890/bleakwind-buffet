@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Coby Walsh
- * Class name: AretinoAppleJuice.cs
+ * Class name: WarriorWater.cs
  * Purpose: Class used to represent Water in order
  */
 
@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Drinks {
-	class WarriorWater {
+	public class WarriorWater {
 		/// <summary>
 		/// holds the size of the drink
 		/// </summary>

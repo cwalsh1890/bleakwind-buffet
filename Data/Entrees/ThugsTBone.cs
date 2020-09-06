@@ -8,16 +8,16 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	class ThugsTBone {
+	public class ThugsTBone {
 		/// <summary>
 		/// holds the price of the steak
 		/// </summary>
-		public double price { get; } = 6.44;
+		public double Price { get; } = 6.44;
 
 		/// <summary>
 		/// holds the calories of the steak-
 		/// </summary>
-		public uint calories { get; } = 982;
+		public uint Calories { get; } = 982;
 
 		/// <summary>
 		/// holds any special instructions for the steak

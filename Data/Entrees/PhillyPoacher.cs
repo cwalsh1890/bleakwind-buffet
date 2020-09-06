@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	class PhillyPoacher
+	public class PhillyPoacher
 	{
 		/// <summary>
 		/// holds whether or not the sandwich should have steak
@@ -17,13 +17,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Sirloin {
 			get { return this.sirloin; }
 			set {
-				if (value) {
-					sirloin = true;
-					specialInstructions.Remove("Hold sirloin");
-				}
-				else {
-					sirloin = false;
-					specialInstructions.Add("Hold sirloin");
+				if (value != sirloin) {
+					if (value) {
+						sirloin = true;
+						specialInstructions.Remove("Hold sirloin");
+					}
+					else {
+						sirloin = false;
+						specialInstructions.Add("Hold sirloin");
+					}
 				}
 			}
 		}
@@ -35,13 +37,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Onion {
 			get { return this.onion; }
 			set {
-				if (value) {
-					onion = true;
-					specialInstructions.Remove("Hold onion");
-				}
-				else {
-					onion = false;
-					specialInstructions.Add("Hold onion");
+				if (value != onion) {
+					if (value) {
+						onion = true;
+						specialInstructions.Remove("Hold onion");
+					}
+					else {
+						onion = false;
+						specialInstructions.Add("Hold onion");
+					}
 				}
 			}
 		}
@@ -53,13 +57,15 @@ namespace BleakwindBuffet.Data.Entrees
 		public bool Roll {
 			get { return this.roll; }
 			set {
-				if (value) {
-					roll = true;
-					specialInstructions.Remove("Hold roll");
-				}
-				else {
-					roll = false;
-					specialInstructions.Add("Hold roll");
+				if (value != roll) {
+					if (value) {
+						roll = true;
+						specialInstructions.Remove("Hold roll");
+					}
+					else {
+						roll = false;
+						specialInstructions.Add("Hold roll");
+					}
 				}
 			}
 		}
@@ -67,12 +73,12 @@ namespace BleakwindBuffet.Data.Entrees
 		/// <summary>
 		/// holds the price of the sandwich
 		/// </summary>
-		public double price { get; } = 7.23;
+		public double Price { get; } = 7.23;
 
 		/// <summary>
 		/// holds the calories of the sandwich
 		/// </summary>
-		public uint calories { get; } = 784;
+		public uint Calories { get; } = 784;
 
 		/// <summary>
 		/// holds any special instructions for the sandwich

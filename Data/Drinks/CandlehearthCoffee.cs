@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Coby Walsh
- * Class name: AretinoAppleJuice.cs
+ * Class name: CandlehearthCoffee.cs
  * Purpose: Class used to represent Coffee in order
  */
 
@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Drinks {
-	class CandlehearthCoffee {
+	public class CandlehearthCoffee {
 		/// <summary>
 		/// holds the size of the coffee
 		/// </summary>
@@ -48,7 +48,9 @@ namespace BleakwindBuffet.Data.Drinks {
 		public bool Decaf {
 			get { return this.decaf; }
 			set {
-				decaf = value;
+				if (value != decaf) {
+					decaf = value;
+				}
 			}
 		}
 
@@ -120,10 +122,10 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// <returns>drink size then if its decaf then drink name</returns>
 		public override string ToString() {
 			if (decaf) {
-				return $"{Enum.GetName(typeof(Size), size)} Candlehearth Coffee";
+				return $"{Enum.GetName(typeof(Size), size)} Decaf Candlehearth Coffee";
 			}
 			else {
-				return $"{Enum.GetName(typeof(Size), size)} Decaf Candlehearth Coffee";
+				return $"{Enum.GetName(typeof(Size), size)} Candlehearth Coffee";
 			}
 		}
 	}

@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Drinks {
-	class ArentinoAppleJuice {
+	public class ArentinoAppleJuice {
 		/// <summary>
 		/// holds size of the drink
 		/// </summary>
