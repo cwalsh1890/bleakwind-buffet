@@ -1,5 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Edited by: Coby Walsh
  * Class: FriedMiraakTests.cs
  * Purpose: Test the FriedMiraak.cs class in the Data library
  */
@@ -12,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class FriedMiraakTests
     {
+        /// <summary>
+        /// Tests to ensure that the size of the side is small by default
+        /// </summary>
         [Fact]
         public void ShouldBeSmallByDefault()
         {
@@ -19,6 +23,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, fm.Size);
         }
 
+        /// <summary>
+        /// tests to ensure that the size of the side is able to be changed
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
@@ -31,6 +38,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(Size.Small, fm.Size);
         }
 
+        /// <summary>
+        /// Tests to ensure that the special instructions are returned correctly
+        /// </summary>
+        /// <remarks>There is no intended way for anything to be added to special instructions</remarks>
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
@@ -38,6 +49,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Empty(fm.SpecialInstructions);
         }
 
+        /// <summary>
+        /// Tests to ensure that the price is correct based on the size
+        /// </summary>
+        /// <param name="size">The size of the side</param>
+        /// <param name="price">The correct price for the side based on size</param>
         [Theory]
         [InlineData(Size.Small, 1.78)]
         [InlineData(Size.Medium, 2.01)]
@@ -49,6 +65,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(price, fm.Price);
         }
 
+        /// <summary>
+        /// Tests to ensure that the calories are correct based on the size
+        /// </summary>
+        /// <param name="size">The size of the side</param>
+        /// <param name="calories">The correct calories for the side based on the size</param>
         [Theory]
         [InlineData(Size.Small, 151)]
         [InlineData(Size.Medium, 236)]
@@ -60,6 +81,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(calories, fm.Calories);
         }
 
+        /// <summary>
+        /// Tests to ensure that the ToString method is correct based on size
+        /// </summary>
+        /// <param name="size">The size of the side</param>
+        /// <param name="name">The correct string that should be output based on size</param>
         [Theory]
         [InlineData(Size.Small, "Small Fried Miraak")]
         [InlineData(Size.Medium, "Medium Fried Miraak")]

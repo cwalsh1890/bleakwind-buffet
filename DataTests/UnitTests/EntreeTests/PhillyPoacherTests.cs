@@ -1,5 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Edited by: Coby Walsh
  * Class: PhillyPoacherTests.cs
  * Purpose: Test the PhillyPoacher.cs class in the Data library
  */
@@ -11,6 +12,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class PhillyPoacherTests
     {
+        /// <summary>
+        /// Tests to ensure that sirloin is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldInlcudeSirloinByDefault()
         {
@@ -18,6 +22,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Sirloin);
         }
 
+        /// <summary>
+        /// Tests to ensure that oinion is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldInlcudeOnionByDefault()
         {
@@ -25,13 +32,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Onion);
         }
 
+        /// <summary>
+        /// Tests to ensure that roll is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldInlcudeRollByDefault()
         {
             PhillyPoacher pp = new PhillyPoacher();
             Assert.True(pp.Roll);
         }
-
+        
+        /// <summary>
+        /// Test to ensure that the sirloin property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetSirloin()
         {
@@ -42,6 +55,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Sirloin);
         }
 
+        /// <summary>
+        /// Test to ensure that the oinion property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetOnions()
         {
@@ -52,6 +68,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Onion);
         }
 
+        /// <summary>
+        /// Test to ensure that the rool property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetRoll()
         {
@@ -62,6 +81,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(pp.Roll);
         }
 
+        /// <summary>
+        /// Tests to ensure that the sandwich returns the correct price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -69,6 +91,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(7.23, pp.Price);
         }
 
+        /// <summary>
+        /// tests to ensure that the sandwich returns the correct amount of calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -76,6 +101,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal((uint) 784, pp.Calories);
         }
 
+        /// <summary>
+        /// Tests to ensure that the special instructions are correct
+        /// </summary>
+        /// <param name="includeSirloin">whether or not the sandwich should have steak</param>
+        /// <param name="includeOnion">whether or not the sandwich should have oinion</param>
+        /// <param name="includeRoll">whether or not the sandwich should have a roll</param>
         [Theory]
         [InlineData(true, true, true)]
         [InlineData(false, false, false)]
@@ -103,6 +134,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 Assert.Contains("Hold roll", pp.SpecialInstructions);
         }
 
+        /// <summary>
+        /// ensures that the ToString method is correct
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {

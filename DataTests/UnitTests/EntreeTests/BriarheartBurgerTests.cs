@@ -1,5 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Edited by: Coby Walsh
  * Class: BriarheartBurgerTests.cs
  * Purpose: Test the BriarheartBurger.cs class in the Data library
  */
@@ -12,7 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class BriarheartBurgerTests
     {
-        
+        /// <summary>
+        /// Tests to ensure that bun is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeBunByDefault()
         {
@@ -20,6 +23,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Bun);
         }
 
+        /// <summary>
+        /// Tests to ensure that letchup is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeKetchupByDefault()
         {
@@ -27,6 +33,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Ketchup);
         }
 
+        /// <summary>
+        /// Tests to ensure that mustard is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeMustardByDefault()
         {
@@ -34,6 +43,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Mustard);
         }
 
+        /// <summary>
+        /// Tests to ensure that pickle is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludePickleByDefault()
         {
@@ -41,6 +53,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Pickle);
         }
 
+        /// <summary>
+        /// Tests to ensure that cheese is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeCheeseByDefault()
         {
@@ -48,6 +63,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Cheese);
         }
 
+        /// <summary>
+        /// Test to ensure that the bun property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetBun()
         {
@@ -58,6 +76,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Bun);
         }
 
+        /// <summary>
+        /// Test to ensure that the ketchup property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetKetchup()
         {
@@ -68,6 +89,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Ketchup);
         }
 
+        /// <summary>
+        /// Test to ensure that the mustard property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetMustard()
         {
@@ -78,6 +102,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Mustard);
         }
 
+        /// <summary>
+        /// Test to ensure that the pickle property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetPickle()
         {
@@ -88,6 +115,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Pickle);
         }
 
+        /// <summary>
+        /// Test to ensure that the cheese property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetCheese()
         {
@@ -98,6 +128,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(bb.Cheese);
         }
 
+        /// <summary>
+        /// Tests to ensure that the burger returns the correct price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -105,6 +138,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(6.32, bb.Price);
         }
 
+        /// <summary>
+        /// tests to ensure that the burger returns the correct amount of calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -112,6 +148,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal((uint) 743, bb.Calories);
         }
 
+        /// <summary>
+        /// Tests to ensure that the special instructions are correct
+        /// </summary>
+        /// <param name="includeBun">whether or not the burger should have a bun</param>
+        /// <param name="includeKetchup">whether or not the burger should have ketchup</param>
+        /// <param name="includeMustard">whether or not the burger should have mustard</param>
+        /// <param name="includePickle">whether or not the burger should have pickles</param>
+        /// <param name="includeCheese">whether or not the burger should have cheese</param>
         [Theory]
         [InlineData(true, true, true, true, true)]
         [InlineData(false, false, false, false, false)]
@@ -150,6 +194,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 Assert.Contains("Hold cheese", bb.SpecialInstructions);
         }
 
+        /// <summary>
+        /// ensures that the ToString method is correct
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {

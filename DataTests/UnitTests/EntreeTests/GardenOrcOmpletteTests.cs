@@ -1,5 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Edited by: Coby Walsh
  * Class: GardenOrcOmeletteTests.cs
  * Purpose: Test the GardenOrcOmelette.cs class in the Data library
  */
@@ -12,6 +13,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class GardenOrcOmeletteTests
     {
+        /// <summary>
+        /// Tests to ensure that broccoli is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldInlcudeBroccoliByDefault()
         {
@@ -19,6 +23,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Broccoli);
         }
 
+        /// <summary>
+        /// Tests to ensure that mushrooms is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldInlcudeMushroomsByDefault()
         {
@@ -26,6 +33,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Mushrooms);
         }
 
+        /// <summary>
+        /// Tests to ensure that tomato is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldInlcudeTomatoByDefault()
         {
@@ -33,6 +43,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Tomato);
         }
 
+        /// <summary>
+        /// Tests to ensure that cheddar is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldInlcudeCheddarByDefault()
         {
@@ -40,6 +53,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Cheddar);
         }
 
+        /// <summary>
+        /// Test to ensure that the broccoli property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetBroccoli()
         {
@@ -50,6 +66,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Broccoli);
         }
 
+        /// <summary>
+        /// Test to ensure that the mushrooms property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetMushrooms()
         {
@@ -60,6 +79,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Mushrooms);
         }
 
+        /// <summary>
+        /// Test to ensure that the tomato property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetTomato()
         {
@@ -70,6 +92,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Tomato);
         }
 
+        /// <summary>
+        /// Test to ensure that the cheddar property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetCheddar()
         {
@@ -80,6 +105,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(oo.Cheddar);
         }
 
+        /// <summary>
+        /// Tests to ensure that the entree returns the correct price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -87,6 +115,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(4.57, oo.Price);
         }
 
+        /// <summary>
+        /// tests to ensure that the entree returns the correct amount of calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -94,6 +125,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal((uint) 404, oo.Calories);
         }
 
+        /// <summary>
+        /// Tests to ensure that the special instructions are correct
+        /// </summary>
+        /// <param name="includeBroccoli">Whether or not the omlette should have broccoli</param>
+        /// <param name="includeMushrooms">Whether or not the omlette should have mushrooms</param>
+        /// <param name="includeTomato">Whether or not the omlette should have tomato</param>
+        /// <param name="includeCheddar">Whether or not the omlette should have cheddar</param>
         [Theory]
         [InlineData(true, true, true, true)]
         [InlineData(false, false, false, false)]
@@ -127,6 +165,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 Assert.Contains("Hold cheddar", oo.SpecialInstructions);
         }
 
+        /// <summary>
+        /// ensures that the ToString method is correct
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {

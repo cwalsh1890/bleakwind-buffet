@@ -1,5 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Edited by: Coby Walsh
  * Class: ThalmorTripleTests.cs
  * Purpose: Test the ThalmorTriple.cs class in the Data library
  */
@@ -11,6 +12,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThalmorTripleTests
     {
+        /// <summary>
+        /// Tests to ensure that bun is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeBunByDefault()
         {
@@ -18,6 +22,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Bun);
         }
 
+        /// <summary>
+        /// Tests to ensure that ketchup is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeKetchupByDefault()
         {
@@ -25,6 +32,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Ketchup);
         }
 
+        /// <summary>
+        /// Tests to ensure that mustard is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeMustardByDefault()
         {
@@ -32,6 +42,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Mustard);
         }
 
+        /// <summary>
+        /// Tests to ensure that pickle is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludePickleByDefault()
         {
@@ -39,6 +52,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Pickle);
         }
 
+        /// <summary>
+        /// Tests to ensure that cheese is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeCheeseByDefault()
         {
@@ -46,6 +62,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Cheese);
         }
 
+        /// <summary>
+        /// Tests to ensure that tomato is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeTomatoByDefault()
         {
@@ -53,6 +72,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Tomato);
         }
 
+        /// <summary>
+        /// Tests to ensure that lettuce is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeLettuceByDefault()
         {
@@ -60,6 +82,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Lettuce);
         }
 
+        /// <summary>
+        /// Tests to ensure that mayo is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeMayoByDefault()
         {
@@ -67,6 +92,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Mayo);
         }
 
+        /// <summary>
+        /// Tests to ensure that bacon is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeBaconByDefault()
         {
@@ -74,6 +102,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Bacon);
         }
 
+        /// <summary>
+        /// Tests to ensure that egg is initialized to true by default
+        /// </summary>
         [Fact]
         public void ShouldIncludeEggByDefault()
         {
@@ -81,6 +112,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Egg);
         }
 
+        /// <summary>
+        /// Test to ensure that the bun property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetBun()
         {
@@ -91,6 +125,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Bun);
         }
 
+        /// <summary>
+        /// Test to ensure that the ketchup property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetKetchup()
         {
@@ -101,6 +138,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Ketchup);
         }
 
+        /// <summary>
+        /// Test to ensure that the mustard property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetMustard()
         {
@@ -111,6 +151,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Mustard);
         }
 
+        /// <summary>
+        /// Test to ensure that the pickle property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetPickle()
         {
@@ -121,6 +164,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Pickle);
         }
 
+        /// <summary>
+        /// Test to ensure that the cheese property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetCheese()
         {
@@ -131,6 +177,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Cheese);
         }
 
+        /// <summary>
+        /// Test to ensure that the tomato property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetTomato()
         {
@@ -141,6 +190,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Tomato);
         }
 
+        /// <summary>
+        /// Test to ensure that the lettuce property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetLettuce()
         {
@@ -151,6 +203,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Lettuce);
         }
 
+        /// <summary>
+        /// Test to ensure that the mayo property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetMayo()
         {
@@ -161,6 +216,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Mayo);
         }
 
+        /// <summary>
+        /// Test to ensure that the bacon property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetBacon()
         {
@@ -171,6 +229,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Bacon);
         }
 
+        /// <summary>
+        /// Test to ensure that the egg property can be properly set
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToSetEgg()
         {
@@ -181,6 +242,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.True(tt.Egg);
         }
 
+        /// <summary>
+        /// Tests to ensure that the burger returns the correct price
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
@@ -188,6 +252,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal(8.32, tt.Price);
         }
 
+        /// <summary>
+        /// tests to ensure that the burger returns the correct amount of calories
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
@@ -195,6 +262,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal((uint) 943, tt.Calories);
         }
 
+        /// <summary>
+        /// Tests to ensure that the special instructions are correct
+        /// </summary>
+        /// <param name="includeBun">whether or not the burger should have a bun</param>
+        /// <param name="includeKetchup">whether or not the burger should have ketchup</param>
+        /// <param name="includeMustard">whether or not the burger should have mustard</param>
+        /// <param name="includePickle">whether or not the burger should have pickles</param>
+        /// <param name="includeCheese">whether or not the burger should have cheese</param>
+        /// <param name="includeTomato">whether or not the burger should have tomato</param>
+        /// <param name="includeLettuce">whether or not the burger should have lettuce</param>
+        /// <param name="includeMayo">whether or not the burger should have mayo</param>
+        /// <param name="includeBacon">whether or not the burger should have bacon</param>
+        /// <param name="includeEgg">whether or not the burger should have egg</param>
         [Theory]
         [InlineData(true, true, true, true, true, true, true, true, true, true)]
         [InlineData(false, false, false, false, false, false, false, false, false, false)]
@@ -266,6 +346,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 Assert.Contains("Hold egg", tt.SpecialInstructions);
         }
 
+        /// <summary>
+        /// ensures that the ToString method is correct
+        /// </summary>
         [Fact]
         public void ShouldReturnCorrectToString()
         {
