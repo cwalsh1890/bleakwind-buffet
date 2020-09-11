@@ -5,16 +5,17 @@
  */
 
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Menu;
 using System;
 using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Sides {
-	public class FriedMiraak {
+	public class FriedMiraak : Side, IOrderItem {
 		/// <summary>
 		/// holds the size of the side
 		/// </summary>
 		private Size size = Size.Small;
-		public Size Size {
+		public override Size Size {
 			get { return this.size; }
 			set {
 				size = value;
@@ -24,7 +25,7 @@ namespace BleakwindBuffet.Data.Sides {
 		/// <summary>
 		/// holds the price of the side
 		/// </summary>
-		public double Price {
+		public override double Price {
 			get {
 				switch (size) {
 					case Size.Small:
@@ -41,7 +42,7 @@ namespace BleakwindBuffet.Data.Sides {
 		/// <summary>
 		/// holds the amount of calories in the side
 		/// </summary>
-		public uint Calories {
+		public override uint Calories {
 			get {
 				switch (size) {
 					case Size.Small:
@@ -59,7 +60,7 @@ namespace BleakwindBuffet.Data.Sides {
 		/// list of special instructions to be returned 
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
-		public List<string> SpecialInstructions {
+		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}
 

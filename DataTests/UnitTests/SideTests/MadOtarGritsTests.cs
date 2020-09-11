@@ -9,11 +9,30 @@ using Xunit;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using System.Runtime.InteropServices.ComTypes;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class MadOtarGritsTests
     {
+        /// <summary>
+        /// tests to ensure that the side is inheriting the Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide() {
+            MadOtarGrits og = new MadOtarGrits();
+            Assert.IsAssignableFrom<Side>(og);
+        }
+
+        /// <summary>
+		/// ensure that the Side is implementing the IOrderItem interface
+		/// </summary>
+		[Fact]
+        public void ShouldBeAnIOrderItem() {
+            MadOtarGrits og = new MadOtarGrits();
+            Assert.IsAssignableFrom<IOrderItem>(og);
+        }
+
         /// <summary>
         /// Tests to ensure that the size of the side is small by default
         /// </summary>

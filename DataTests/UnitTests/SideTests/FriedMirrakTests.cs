@@ -8,11 +8,30 @@ using Xunit;
 
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class FriedMiraakTests
     {
+        /// <summary>
+        /// tests to ensure that the side is inheriting the Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide() {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<Side>(fm);
+        }
+
+        /// <summary>
+		/// ensure that the Side is implementing the IOrderItem interface
+		/// </summary>
+		[Fact]
+        public void ShouldBeAnIOrderItem() {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<IOrderItem>(fm);
+        }
+
         /// <summary>
         /// Tests to ensure that the size of the side is small by default
         /// </summary>

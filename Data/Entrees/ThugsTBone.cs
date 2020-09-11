@@ -5,25 +5,26 @@
  */
 
 using System.Collections.Generic;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class ThugsTBone {
+	public class ThugsTBone : Entree, IOrderItem {
 		/// <summary>
 		/// holds the price of the steak
 		/// </summary>
-		public double Price { get; } = 6.44;
+		public override double Price { get; } = 6.44;
 
 		/// <summary>
 		/// holds the calories of the steak-
 		/// </summary>
-		public uint Calories { get; } = 982;
+		public override uint Calories { get; } = 982;
 
 		/// <summary>
 		/// holds any special instructions for the steak
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
-		public List<string> SpecialInstructions {
+		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}
 

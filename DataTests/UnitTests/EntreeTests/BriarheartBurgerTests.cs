@@ -8,11 +8,30 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class BriarheartBurgerTests
     {
+        /// <summary>
+        /// tests to ensure that the entree is inheriting the Entree class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnEntree() {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<Entree>(bb);
+        }
+
+        /// <summary>
+		/// ensure that the Entree is implementing the IOrderItem interface
+		/// </summary>
+		[Fact]
+        public void ShouldBeAnIOrderItem() {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<IOrderItem>(bb);
+        }
+
         /// <summary>
         /// Tests to ensure that bun is initialized to true by default
         /// </summary>

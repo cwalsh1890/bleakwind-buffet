@@ -5,11 +5,11 @@
  */
 
 using System.Collections.Generic;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class SmokehouseSkeleton
-	{
+	public class SmokehouseSkeleton : Entree, IOrderItem {
 		/// <summary>
 		/// holds whether or not the plate should have sausage links
 		/// </summary>
@@ -93,18 +93,18 @@ namespace BleakwindBuffet.Data.Entrees
 		/// <summary>
 		/// holds price for the plate
 		/// </summary>
-		public double Price { get; } = 5.62;
+		public override double Price { get; } = 5.62;
 
 		/// <summary>
 		/// holds calories for the plate
 		/// </summary>
-		public uint Calories { get; } = 602;
+		public override uint Calories { get; } = 602;
 
 		/// <summary>
 		/// holds any special instructions for the plate
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
-		public List<string> SpecialInstructions {
+		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}
 

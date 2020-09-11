@@ -7,15 +7,15 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
-
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Drinks {
-	public class SailorSoda {
+	public class SailorSoda : Drink, IOrderItem {
 		/// <summary>
 		/// holds the size of the drink
 		/// </summary>
 		private Size size = Size.Small;
-		public Size Size {
+		public override Size Size {
 			get { return this.size; }
 			set {
 				size = value;
@@ -56,7 +56,7 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// <summary>
 		/// holds the prices for the different sizes of drinks
 		/// </summary>
-		public double Price {
+		public override double Price {
 			get {
 				switch (size) {
 					case Size.Small:
@@ -73,7 +73,7 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// <summary>
 		/// holds the amount of calories for the different sizes
 		/// </summary>
-		public uint Calories {
+		public override uint Calories {
 			get {
 				switch (size) {
 					case Size.Small:
@@ -91,7 +91,7 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// holds any special instructions for the drink
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
-		public List<string> SpecialInstructions {
+		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}
 

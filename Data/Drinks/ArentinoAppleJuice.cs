@@ -5,16 +5,17 @@
  */
 
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Menu;
 using System;
 using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Drinks {
-	public class ArentinoAppleJuice {
+	public class ArentinoAppleJuice : Drink, IOrderItem {
 		/// <summary>
 		/// holds size of the drink
 		/// </summary>
 		private Size size = Size.Small;
-		public Size Size {
+		public override Size Size {
 			get { return this.size; }
 			set {
 				size = value;
@@ -44,7 +45,7 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// <summary>
 		/// holds the price of the drink based on size
 		/// </summary>
-		public double Price {
+		public override double Price {
 			get {
 				switch (size) {
 					case Size.Small:
@@ -61,7 +62,7 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// <summary>
 		/// holds the amount of calories based on size of drink
 		/// </summary>
-		public uint Calories {
+		public override uint Calories {
 			get {
 				switch (size) {
 					case Size.Small:
@@ -79,7 +80,7 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// holds any special instructions for making the drink
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
-		public List<string> SpecialInstructions {
+		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}
 

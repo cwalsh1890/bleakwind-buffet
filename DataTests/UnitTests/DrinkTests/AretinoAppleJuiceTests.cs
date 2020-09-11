@@ -8,11 +8,30 @@ using Xunit;
 
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
-    public class AretinoAppleJuiceTests
-    {
+    public class AretinoAppleJuiceTests {
+        /// <summary>
+        /// tests to ensure that the drink is inheriting the Drink class
+        /// </summary>
+        [Fact]
+        public void ShouldBeADrink() {
+            ArentinoAppleJuice aj = new ArentinoAppleJuice();
+            Assert.IsAssignableFrom<Drink>(aj);
+        }
+
+        /// <summary>
+        /// ensure that the drink is implementing the IOrderItem interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnIOrderItem() {
+            ArentinoAppleJuice aj = new ArentinoAppleJuice();
+            Assert.IsAssignableFrom<IOrderItem>(aj);
+        }
+        
+
         /// <summary>
         /// Tests to ensure that the ice property of the drink is originally initialized to false
         /// </summary>

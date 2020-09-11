@@ -11,11 +11,30 @@ using Xunit;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using NuGet.Frameworks;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class SailorSodaTests
     {
+        /// <summary>
+        /// tests to ensure that the drink is inheriting the Drink class
+        /// </summary>
+        [Fact]
+        public void ShouldBeADrink() {
+            SailorSoda ss = new SailorSoda();
+            Assert.IsAssignableFrom<Drink>(ss);
+        }
+
+        /// <summary>
+        /// ensure that the drink is implementing the IOrderItem interface
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnIOrderItem() {
+            SailorSoda ss = new SailorSoda();
+            Assert.IsAssignableFrom<IOrderItem>(ss);
+        }
+
         /// <summary>
         /// Tests to ensure that the ice property should be set to true by default
         /// </summary>
