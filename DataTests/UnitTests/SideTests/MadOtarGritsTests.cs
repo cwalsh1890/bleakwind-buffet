@@ -10,6 +10,7 @@ using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using System.Runtime.InteropServices.ComTypes;
 using BleakwindBuffet.Data.Menu;
+using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -115,6 +116,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             MadOtarGrits og = new MadOtarGrits();
             og.Size = size;
             Assert.Equal(name, og.ToString());
+        }
+
+        /// <summary>
+        /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
+        /// </summary>
+        [Fact]
+        public void ThrowsExceptionIfInvalidSizeIsUsed()
+        {
+            MadOtarGrits og = new MadOtarGrits();
+            og.Size = (Size)4;
+            Assert.Throws<NotImplementedException>(() => og.Price);
+            Assert.Throws<NotImplementedException>(() => og.Calories);
         }
     }
 }

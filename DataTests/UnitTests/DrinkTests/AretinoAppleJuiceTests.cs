@@ -9,6 +9,7 @@ using Xunit;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Menu;
+using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -94,6 +95,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             aj.Size = size;
 			Assert.Equal(price, aj.Price);
 		}
+
+        /// <summary>
+        /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
+        /// </summary>
+        [Fact]
+        public void ThrowsExceptionIfInvalidSizeIsUsed()
+        {
+            ArentinoAppleJuice aj = new ArentinoAppleJuice();
+            aj.Size = (Size)4;
+            Assert.Throws<NotImplementedException>(() => aj.Price);
+            Assert.Throws<NotImplementedException>(() => aj.Calories);
+        }
 
         /// <summary>
         /// Tests to ensure that the calories are correct based on the size of the drink

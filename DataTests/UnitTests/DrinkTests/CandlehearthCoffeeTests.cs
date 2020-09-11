@@ -9,6 +9,7 @@ using Xunit;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Menu;
+using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -198,6 +199,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             cf.Size = size;
             cf.Decaf = decaf;
             Assert.Equal(name, cf.ToString());
+        }
+
+        /// <summary>
+        /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
+        /// </summary>
+        [Fact]
+        public void ThrowsExceptionIfInvalidSizeIsUsed()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            cc.Size = (Size)4;
+            Assert.Throws<NotImplementedException>(() => cc.Price);
+            Assert.Throws<NotImplementedException>(() => cc.Calories);
         }
     }
 }

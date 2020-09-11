@@ -35,7 +35,7 @@ namespace BleakwindBuffet.Data.Sides {
 					case Size.Large:
 						return 1.82;
 				}
-				return 0;
+				throw new NotImplementedException("Size has not been implemented");
 			}
 		}
 
@@ -52,7 +52,7 @@ namespace BleakwindBuffet.Data.Sides {
 					case Size.Large:
 						return 73;
 				}
-				return 0;
+				throw new NotImplementedException("Size has not been implemented");
 			}
 		}
 

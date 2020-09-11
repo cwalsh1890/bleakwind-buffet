@@ -54,8 +54,9 @@ namespace BleakwindBuffet.Data.Drinks {
 						return .87;
 					case Size.Large:
 						return 1.01;
+					default:
+						throw new NotImplementedException("Size has not been implemented");
 				}
-				return 0;
 			}
 		}
 
@@ -71,8 +72,9 @@ namespace BleakwindBuffet.Data.Drinks {
 						return 88;
 					case Size.Large:
 						return 132;
+					default:
+						throw new NotImplementedException("Size has not been implemented");
 				}
-				return 0;
 			}
 		}
 

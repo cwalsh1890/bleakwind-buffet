@@ -9,6 +9,7 @@ using Xunit;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Menu;
+using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -114,6 +115,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             VokunSalad vs = new VokunSalad();
             vs.Size = size;
             Assert.Equal(name, vs.ToString());
+        }
+
+        /// <summary>
+        /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
+        /// </summary>
+        [Fact]
+        public void ThrowsExceptionIfInvalidSizeIsUsed()
+        {
+            VokunSalad vs = new VokunSalad();
+            vs.Size = (Size)4;
+            Assert.Throws<NotImplementedException>(() => vs.Price);
+            Assert.Throws<NotImplementedException>(() => vs.Calories);
         }
     }
 }

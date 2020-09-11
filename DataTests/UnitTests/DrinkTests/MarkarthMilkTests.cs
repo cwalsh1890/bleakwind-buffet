@@ -10,6 +10,7 @@ using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using System.Runtime;
 using BleakwindBuffet.Data.Menu;
+using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -144,6 +145,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             MarkarthMilk mm = new MarkarthMilk();
             mm.Size = size;
             Assert.Equal(name, mm.ToString());
+        }
+
+        /// <summary>
+        /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
+        /// </summary>
+        [Fact]
+        public void ThrowsExceptionIfInvalidSizeIsUsed()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            mm.Size = (Size)4;
+            Assert.Throws<NotImplementedException>(() => mm.Price);
+            Assert.Throws<NotImplementedException>(() => mm.Calories);
         }
     }
 }

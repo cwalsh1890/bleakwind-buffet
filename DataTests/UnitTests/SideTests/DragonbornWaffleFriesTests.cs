@@ -9,6 +9,7 @@ using Xunit;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Menu;
+using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -114,6 +115,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             wf.Size = size;
             Assert.Equal(name, wf.ToString());
+        }
+
+        /// <summary>
+        /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
+        /// </summary>
+        [Fact]
+        public void ThrowsExceptionIfInvalidSizeIsUsed()
+        {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+            wf.Size = (Size)4;
+            Assert.Throws<NotImplementedException>(() => wf.Price);
+            Assert.Throws<NotImplementedException>(() => wf.Calories);
         }
     }
 }

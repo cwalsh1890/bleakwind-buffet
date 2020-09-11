@@ -200,5 +200,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             ss.Size = size;
             Assert.Equal(name, ss.ToString());
         }
+
+        /// <summary>
+        /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
+        /// </summary>
+        [Fact]
+        public void ThrowsExceptionIfInvalidSizeIsUsed()
+        {
+            SailorSoda ss = new SailorSoda();
+            ss.Size = (Size)4;
+            Assert.Throws<NotImplementedException>(() => ss.Price);
+            Assert.Throws<NotImplementedException>(() => ss.Calories);
+        }
     }
 }
