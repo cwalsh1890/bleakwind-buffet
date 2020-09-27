@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="PointOfSale.RuningTotal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="250">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="orderNumber" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Arial">
+            Order
+        </TextBlock>
+        <ListBox Name="orderElements" Grid.Row="1" Grid.ColumnSpan="2">
+            
+        </ListBox>
+        <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" FontFamily="Arial">
+            Sub Total: <LineBreak/>
+            Tax: <LineBreak/>
+            Total:
+        </TextBlock>
+        <TextBlock Name="moneyValues" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial">
+            $0.00 <LineBreak/>
+            $0.00 <LineBreak/>
+            $0.00 
+        </TextBlock>
+    </Grid>
+</UserControl>

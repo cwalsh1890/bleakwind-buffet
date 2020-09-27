@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="PointOfSale.Entree.BurgerModifiers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.Entree"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ToggleButton Name="bunToggleButton" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
+            Bun
+        </ToggleButton>
+        <ToggleButton Name="ketchupToggleButton" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
+            Ketchup
+        </ToggleButton>
+
+        <ToggleButton Name="PickleToggleButton" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
+            Pickle
+        </ToggleButton>
+        <ToggleButton Name="mustardToggleButton" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
+            Mustard
+        </ToggleButton>
+
+        <ToggleButton Name="cheeseToggleButton" Grid.Column="0" Grid.Row="2" FontSize="20" FontFamily="Arial">
+            Cheese
+        </ToggleButton>
+        <ToggleButton Name="tomatoToggleButton" Grid.Column="1" Grid.Row="2" FontSize="20" FontFamily="Arial">
+            Tomato
+        </ToggleButton>
+
+        <ToggleButton Name="lettuceToggleButton" Grid.Column="0" Grid.Row="3" FontSize="20" FontFamily="Arial">
+            Lettuce
+        </ToggleButton>
+        <ToggleButton Name="mayToggleButton" Grid.Column="1" Grid.Row="3" FontSize="20" FontFamily="Arial">
+            Mayo
+        </ToggleButton>
+
+        <ToggleButton Name="baconToggleButton" Grid.Column="0" Grid.Row="4" FontSize="20" FontFamily="Arial">
+            Bacon
+        </ToggleButton>
+        <ToggleButton Name="eggToggleButton" Grid.Column="1" Grid.Row="4" FontSize="20" FontFamily="Arial">
+            Egg
+        </ToggleButton>
+    </Grid>
+</UserControl>
