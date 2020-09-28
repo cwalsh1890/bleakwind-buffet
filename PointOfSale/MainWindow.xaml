@@ -9,18 +9,29 @@
         xmlns:side="clr-namespace:PointOfSale.Side"
         mc:Ignorable="d"
         Title="Bleakwind Buffet" Height="450" Width="750">
-    <DockPanel>
-        <local:BottomControls DockPanel.Dock="Bottom" Height="50" Margin="5"/>
-        <local:TypeSelector DockPanel.Dock="Left" Width="100" Margin="5"/>
-        <ContentControl Width="100" Margin="5">
-            <drink:DrinkOption/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <local:BottomControls Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Margin="5"/>
+        <local:TypeSelector Grid.Column="0" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch"/>
+        <ContentControl Grid.Column="1" Grid.Row="0" Name="itemChoice" Margin="5"  HorizontalAlignment="Stretch">
+            
         </ContentControl>
-        <ContentControl Width="300" Margin="5">
-            <drink:DrinkModifiers/>
+        <ContentControl Grid.Column="2" Grid.Row="0" Name="modiferChoices"  Margin="5"  HorizontalAlignment="Stretch">
+            
         </ContentControl>
-        <local:RuningTotal Margin="5">
+        <local:RuningTotal Grid.Column="3" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch">
             
         </local:RuningTotal>
         
-    </DockPanel>
+    </Grid>
 </Window>

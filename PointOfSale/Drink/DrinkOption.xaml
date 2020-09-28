@@ -5,8 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale.Drink"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="100">
+             d:DesignHeight="450" >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -14,19 +17,19 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" FontSize="15" FontFamily="Arial">
+        <Button Click="AppleJuiceOrMilkClick" Grid.Row="0" FontSize="15" FontFamily="Arial">
             Arentino AJ
         </Button>
-        <Button Grid.Row="1" FontSize="15" FontFamily="Arial">
+        <Button Click="SelectCoffeeClick" Grid.Row="1" FontSize="15" FontFamily="Arial">
             CH Coffee
         </Button>
-        <Button Grid.Row="2" FontSize="15" FontFamily="Arial">
+        <Button Click="AppleJuiceOrMilkClick" Grid.Row="2" FontSize="15" FontFamily="Arial">
             Markarth Milk
         </Button>
-        <Button Grid.Row="3" FontSize="15" FontFamily="Arial">
+        <Button Click="SodaClick" Grid.Row="3" FontSize="15" FontFamily="Arial">
             Sailor Soda
         </Button>
-        <Button Grid.Row="4" FontSize="15" FontFamily="Arial">
+        <Button Click="WaterClick" Grid.Row="4" FontSize="15" FontFamily="Arial">
             Warrior Water
         </Button>
     </Grid>

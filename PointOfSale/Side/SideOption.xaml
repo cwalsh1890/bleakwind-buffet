@@ -13,16 +13,16 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" FontSize="15" FontFamily="Arial">
+        <Button Click="SelectWaffleFries" Grid.Row="0" FontSize="15" FontFamily="Arial">
             DB Wafl Fries
         </Button>
-        <Button Grid.Row="1" FontSize="15" FontFamily="Arial">
+        <Button Click="SelectFriedMiraak" Grid.Row="1" FontSize="15" FontFamily="Arial">
             Fried Miraak
         </Button>
-        <Button Grid.Row="2" FontSize="15" FontFamily="Arial">
+        <Button Click="SelectMadOtarGrits" Grid.Row="2" FontSize="15" FontFamily="Arial">
             Mad O Grits
         </Button>
-        <Button Grid.Row="3" FontSize="15" FontFamily="Arial">
+        <Button Click="SelectVokunSalad" Grid.Row="3" FontSize="15" FontFamily="Arial">
             Vokun Salad
         </Button>
     </Grid>

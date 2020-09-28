@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,26 @@ namespace PointOfSale.Drink {
 	public partial class DrinkOption : UserControl {
 		public DrinkOption() {
 			InitializeComponent();
+		}
+
+		void SelectCoffeeClick(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.CoffeeSelected();
+		}
+
+		void AppleJuiceOrMilkClick(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.AppleJuiceOrMilkSelected();
+		}
+
+		void WaterClick(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.WaterSelected();
+		}
+
+		void SodaClick(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.SodaSelected();
 		}
 	}
 }

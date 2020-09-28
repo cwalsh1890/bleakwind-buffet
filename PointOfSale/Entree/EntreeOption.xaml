@@ -16,25 +16,25 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" FontSize="15" FontFamily="Arial">
+        <Button Click="BriarHeartBurgerClick" Grid.Row="0" FontSize="15" FontFamily="Arial">
             BH Burger
         </Button>
-        <Button Grid.Row="1" FontSize="15" FontFamily="Arial">
+        <Button Click="DoubleDraugrClick" Grid.Row="1" FontSize="15" FontFamily="Arial">
             Double D
         </Button>
-        <Button Grid.Row="2" FontSize="15" FontFamily="Arial">
+        <Button Click="ThalmorTripleClick" Grid.Row="2" FontSize="15" FontFamily="Arial">
             Thalmor Trip
         </Button>
-        <Button Grid.Row="3" FontSize="15" FontFamily="Arial">
+        <Button Click="GardenOrcOmeletteClick" Grid.Row="3" FontSize="15" FontFamily="Arial">
             GardOrc Omlt
         </Button>
-        <Button Grid.Row="4" FontSize="15" FontFamily="Arial">
+        <Button Click="PhillyPoacherClick" Grid.Row="4" FontSize="15" FontFamily="Arial">
             Philly Poacher
         </Button>
-        <Button Grid.Row="5" FontSize="15" FontFamily="Arial">
+        <Button Click="SmokehouseSkeletonClick" Grid.Row="5" FontSize="15" FontFamily="Arial">
             SmokH Sklton
         </Button>
-        <Button Grid.Row="6" FontSize="15" FontFamily="Arial">
+        <Button Click="ThugsTBoneClick" Grid.Row="6" FontSize="15" FontFamily="Arial">
             Thug T-Bone
         </Button>
     </Grid>

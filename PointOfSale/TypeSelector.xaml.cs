@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,21 @@ namespace PointOfSale {
 	public partial class TypeSelector : UserControl {
 		public TypeSelector() {
 			InitializeComponent();
+		}
+
+		void SelectEntree(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.EntreeSelected();
+		}
+
+		void SelectSide(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.SideSelected();
+		}
+
+		void SelectDrink(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.DrinkSelected();
 		}
 	}
 }
