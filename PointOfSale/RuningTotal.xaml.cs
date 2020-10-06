@@ -23,6 +23,10 @@ namespace PointOfSale {
 			//orderElements.ItemsSource = OrderItems;
 		}
 
+		/// <summary>
+		/// adds itme to list of total items
+		/// </summary>
+		/// <param name="item">item to add</param>
 		public void AddElement(IOrderItem item) {
 			OrderItems.Add(item);
 			orderElements.Items.Add(item);

@@ -32,27 +32,42 @@ namespace PointOfSale {
 			BotControl.Content = new BottomControls(this);
 		}
 
+		/// <summary>
+		/// adds item to total
+		/// </summary>
 		public void AddItem() {
 			if (modiferChoices != null) {
 				Total.AddElement(foodItem);
 			}
 		}
 
+		/// <summary>
+		/// brings up entreee selections
+		/// </summary>
 		public void EntreeSelected() {
 			itemChoice.Content = new EntreeOption();
 			modiferChoices.Content = null;
 		}
 
+		/// <summary>
+		/// brings up side selections
+		/// </summary>
 		public void SideSelected() {
 			itemChoice.Content = new SideOption();
 			modiferChoices.Content = null;
 		}
 
+		/// <summary>
+		/// brings up drink selections
+		/// </summary>
 		public void DrinkSelected() {
 			itemChoice.Content = new DrinkOption();
 			modiferChoices.Content = null;
 		}
 
+		/// <summary>
+		/// used to add coffee item to total
+		/// </summary>
 		public void CoffeeSelected() {
 			DrinkModifiers drinkMod = new DrinkModifiers();
 			drinkMod.lemonToggleButton.Visibility = Visibility.Collapsed;
@@ -62,6 +77,9 @@ namespace PointOfSale {
 			modiferChoices.Content = drinkMod;
 		}
 
+		/// <summary>
+		/// used to add aple juice item to total
+		/// </summary>
 		public void AppleJuiceSelected() {
 			DrinkModifiers drinkMod = new DrinkModifiers();
 			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
@@ -74,6 +92,9 @@ namespace PointOfSale {
 			modiferChoices.Content = drinkMod;
 		}
 
+		/// <summary>
+		/// used to add milk item to total
+		/// </summary>
 		public void MilkSelected() {
 			DrinkModifiers drinkMod = new DrinkModifiers();
 			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
@@ -86,6 +107,9 @@ namespace PointOfSale {
 			modiferChoices.Content = drinkMod;
 		}
 
+		/// <summary>
+		/// used to add soda item to total
+		/// </summary>
 		public void SodaSelected() {
 			DrinkModifiers drinkMod = new DrinkModifiers();
 			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
@@ -100,6 +124,9 @@ namespace PointOfSale {
 			modiferChoices.Content = sodaMods;
 		}
 
+		/// <summary>
+		/// used to add water item to total
+		/// </summary>
 		public void WaterSelected() {
 			DrinkModifiers drinkMod = new DrinkModifiers();
 			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
@@ -111,6 +138,9 @@ namespace PointOfSale {
 			modiferChoices.Content = drinkMod;
 		}
 
+		/// <summary>
+		/// used to add fry item to total
+		/// </summary>
 		public void WaffleFriesSelected() {
 			SideModifiers sideMod = new SideModifiers();
 			foodItem = new DragonbornWaffleFries();
@@ -118,6 +148,9 @@ namespace PointOfSale {
 			modiferChoices.Content = sideMod;
 		}
 
+		/// <summary>
+		/// used to add fried miraak item to total
+		/// </summary>
 		public void FriedMiraakSelected() {
 			SideModifiers sideMod = new SideModifiers();
 			foodItem = new FriedMiraak();
@@ -125,6 +158,9 @@ namespace PointOfSale {
 			modiferChoices.Content = sideMod;
 		}
 
+		/// <summary>
+		/// used to add otar grits item to total
+		/// </summary>
 		public void OtarGritsSelected() {
 			SideModifiers sideMod = new SideModifiers();
 			foodItem = new MadOtarGrits();
@@ -132,6 +168,9 @@ namespace PointOfSale {
 			modiferChoices.Content = sideMod;
 		}
 
+		/// <summary>
+		/// used to add salad item to total
+		/// </summary>
 		public void SaladSelected() {
 			SideModifiers sideMod = new SideModifiers();
 			foodItem = new VokunSalad();
@@ -139,6 +178,9 @@ namespace PointOfSale {
 			modiferChoices.Content = sideMod;
 		}
 
+		/// <summary>
+		/// used to add bh burger item to total
+		/// </summary>
 		public void BriarHeartBurgerSelected() {
 			BurgerModifiers foodMods = new BurgerModifiers();
 			foodMods.eggToggleButton.Visibility = Visibility.Collapsed;
@@ -151,6 +193,9 @@ namespace PointOfSale {
 			modiferChoices.Content = foodMods;
 		}
 
+		/// <summary>
+		/// used to add double dragr item to total
+		/// </summary>
 		public void DoubleDraugrSelected() {
 			BurgerModifiers foodMods = new BurgerModifiers();
 			foodMods.eggToggleButton.Visibility = Visibility.Collapsed;
@@ -160,6 +205,9 @@ namespace PointOfSale {
 			modiferChoices.Content = foodMods;
 		}
 
+		/// <summary>
+		/// used to add thriple thalmor item to total
+		/// </summary>
 		public void ThalmorTripleSelected() {
 			BurgerModifiers foodMods = new BurgerModifiers();
 			foodItem = new ThalmorTriple();
@@ -167,6 +215,9 @@ namespace PointOfSale {
 			modiferChoices.Content = foodMods;
 		}
 
+		/// <summary>
+		/// used to add omelette item to total
+		/// </summary>
 		public void GardenOrcOmeletteSelected() {
 			OmeletteModifiers foodMods = new OmeletteModifiers();
 			foodItem = new GardenOrcOmelette();
@@ -174,6 +225,9 @@ namespace PointOfSale {
 			modiferChoices.Content = foodMods;
 		}
 
+		/// <summary>
+		/// used to add cheese steak item to total
+		/// </summary>
 		public void PhillyPoacherSelected() {
 			CheeseSteakModifiers foodMods = new CheeseSteakModifiers();
 			foodItem = new PhillyPoacher();
@@ -181,6 +235,9 @@ namespace PointOfSale {
 			modiferChoices.Content = foodMods;
 		}
 
+		/// <summary>
+		/// used to add platter item to total
+		/// </summary>
 		public void SmokehouseSkeletonSelected() {
 			SHSkeletonModifiers foodMods = new SHSkeletonModifiers();
 			foodItem = new SmokehouseSkeleton();
@@ -188,6 +245,9 @@ namespace PointOfSale {
 			modiferChoices.Content = foodMods;
 		}
 
+		/// <summary>
+		/// used to add t-bone item to total
+		/// </summary>
 		public void ThugsTBoneSelected() {
 			ContentControl foodMods = new ContentControl();
 			foodItem = new ThugsTBone();
