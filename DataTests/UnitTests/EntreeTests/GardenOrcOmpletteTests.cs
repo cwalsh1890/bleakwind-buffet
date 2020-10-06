@@ -193,5 +193,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             GardenOrcOmelette oo = new GardenOrcOmelette();
             Assert.Equal("Garden Orc Omelette", oo.ToString());
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            GardenOrcOmelette oo = new GardenOrcOmelette();
+            Assert.PropertyChanged(oo, "broccoli", () => {
+                oo.Broccoli = false;
+            });
+
+            Assert.PropertyChanged(oo, "tomato", () => {
+                oo.Tomato = false;
+            });
+
+            Assert.PropertyChanged(oo, "mushrooms", () => {
+                oo.Mushrooms = false;
+            });
+
+            Assert.PropertyChanged(oo, "cheddar", () => {
+                oo.Cheddar = false;
+            });
+        }
     }
 }

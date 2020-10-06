@@ -5,11 +5,12 @@
  */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class SmokehouseSkeleton : Entree, IOrderItem {
+	public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged {
 		/// <summary>
 		/// holds whether or not the plate should have sausage links
 		/// </summary>
@@ -27,6 +28,7 @@ namespace BleakwindBuffet.Data.Entrees
 						specialInstructions.Add("Hold sausage");
 					}
 				}
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("sausage"));
 			}
 		}
 
@@ -46,6 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
 						egg = false;
 						specialInstructions.Add("Hold eggs");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("egg"));
 				}
 			}
 		}
@@ -66,6 +69,7 @@ namespace BleakwindBuffet.Data.Entrees
 						hashBrowns = false;
 						specialInstructions.Add("Hold hash browns");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("hash brown"));
 				}
 			}
 		}
@@ -86,6 +90,7 @@ namespace BleakwindBuffet.Data.Entrees
 						pancake = false;
 						specialInstructions.Add("Hold pancakes");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("pancake"));
 				}
 			}
 		}
@@ -104,6 +109,12 @@ namespace BleakwindBuffet.Data.Entrees
 		/// holds any special instructions for the plate
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
+
+		/// <summary>
+		/// event to signal when property has been changed
+		/// </summary>
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}

@@ -5,11 +5,12 @@
  */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class ThugsTBone : Entree, IOrderItem {
+	public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged {
 		/// <summary>
 		/// holds the price of the steak
 		/// </summary>
@@ -24,6 +25,12 @@ namespace BleakwindBuffet.Data.Entrees
 		/// holds any special instructions for the steak
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
+
+		/// <summary>
+		/// event to notify that a property has been changed
+		/// </summary>
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}

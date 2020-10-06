@@ -15,17 +15,17 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ToggleButton Name="broccoliToggleButton" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="broccoliToggleButton" IsChecked="{Binding Broccoli}" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Broccoli
         </ToggleButton>
-        <ToggleButton Name="mushroomsToggleButton" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="mushroomsToggleButton" IsChecked="{Binding Mushrooms}" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Mushrooms
         </ToggleButton>
 
-        <ToggleButton Name="cheddarToggleButton" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="cheddarToggleButton" IsChecked="{Binding Cheddar}" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Cheddar
         </ToggleButton>
-        <ToggleButton Name="tomatoToggleButton" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="tomatoToggleButton" IsChecked="{Binding Tomato}" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Tomato
         </ToggleButton>
     </Grid>

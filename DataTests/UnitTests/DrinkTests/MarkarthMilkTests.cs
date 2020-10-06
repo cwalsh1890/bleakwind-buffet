@@ -158,5 +158,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Throws<NotImplementedException>(() => mm.Price);
             Assert.Throws<NotImplementedException>(() => mm.Calories);
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.PropertyChanged(mm, "size", () => {
+                mm.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(mm, "ice", () => {
+                mm.Ice = true;
+            });
+        }
     }
 }

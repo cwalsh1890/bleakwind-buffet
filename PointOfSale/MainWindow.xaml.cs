@@ -1,4 +1,8 @@
-﻿using PointOfSale.Drink;
+﻿using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Menu;
+using BleakwindBuffet.Data.Sides;
+using PointOfSale.Drink;
 using PointOfSale.Entree;
 using PointOfSale.Side;
 using System;
@@ -21,8 +25,17 @@ namespace PointOfSale {
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow : Window {
+		IOrderItem foodItem;
 		public MainWindow() {
 			InitializeComponent();
+			TypeSelector.Content = new TypeSelector(this);
+			BotControl.Content = new BottomControls(this);
+		}
+
+		public void AddItem() {
+			if (modiferChoices != null) {
+				Total.AddElement(foodItem);
+			}
 		}
 
 		public void EntreeSelected() {
@@ -41,63 +54,145 @@ namespace PointOfSale {
 		}
 
 		public void CoffeeSelected() {
-			modiferChoices.Content = new DrinkModifiers();
+			DrinkModifiers drinkMod = new DrinkModifiers();
+			drinkMod.lemonToggleButton.Visibility = Visibility.Collapsed;
+			Grid.SetColumnSpan(drinkMod.iceToggleButton, 2);
+			foodItem = new CandlehearthCoffee();
+			drinkMod.DataContext = foodItem;
+			modiferChoices.Content = drinkMod;
 		}
 
-		public void AppleJuiceOrMilkSelected() {
-			modiferChoices.Content = new DrinkModifiers();
+		public void AppleJuiceSelected() {
+			DrinkModifiers drinkMod = new DrinkModifiers();
+			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
+			drinkMod.lemonToggleButton.Visibility = Visibility.Collapsed;
+			drinkMod.decafToggleButton.Visibility = Visibility.Collapsed;
+			Grid.SetColumnSpan(drinkMod.iceToggleButton, 2);
+			Grid.SetRowSpan(drinkMod.iceToggleButton, 2);
+			foodItem = new ArentinoAppleJuice();
+			drinkMod.DataContext = foodItem;
+			modiferChoices.Content = drinkMod;
+		}
+
+		public void MilkSelected() {
+			DrinkModifiers drinkMod = new DrinkModifiers();
+			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
+			drinkMod.lemonToggleButton.Visibility = Visibility.Collapsed;
+			drinkMod.decafToggleButton.Visibility = Visibility.Collapsed;
+			Grid.SetColumnSpan(drinkMod.iceToggleButton, 2);
+			Grid.SetRowSpan(drinkMod.iceToggleButton, 2);
+			foodItem = new MarkarthMilk();
+			drinkMod.DataContext = foodItem;
+			modiferChoices.Content = drinkMod;
 		}
 
 		public void SodaSelected() {
-			modiferChoices.Content = new SailorSodaModifiers();
+			DrinkModifiers drinkMod = new DrinkModifiers();
+			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
+			drinkMod.lemonToggleButton.Visibility = Visibility.Collapsed;
+			drinkMod.decafToggleButton.Visibility = Visibility.Collapsed;
+			Grid.SetColumnSpan(drinkMod.iceToggleButton, 2);
+			Grid.SetRowSpan(drinkMod.iceToggleButton, 2);
+			SailorSoda foodItem = new SailorSoda();
+			drinkMod.DataContext = foodItem;
+			SailorSodaModifiers sodaMods = new SailorSodaModifiers(drinkMod);
+			sodaMods.DataContext = foodItem;
+			modiferChoices.Content = sodaMods;
 		}
 
 		public void WaterSelected() {
-			modiferChoices.Content = new DrinkModifiers();
+			DrinkModifiers drinkMod = new DrinkModifiers();
+			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
+			drinkMod.decafToggleButton.Visibility = Visibility.Collapsed;
+			Grid.SetRowSpan(drinkMod.lemonToggleButton, 2);
+			Grid.SetRowSpan(drinkMod.iceToggleButton, 2);
+			foodItem = new WarriorWater();
+			drinkMod.DataContext = foodItem;
+			modiferChoices.Content = drinkMod;
 		}
 
 		public void WaffleFriesSelected() {
-			modiferChoices.Content = new SideModifiers();
+			SideModifiers sideMod = new SideModifiers();
+			foodItem = new DragonbornWaffleFries();
+			sideMod.DataContext = foodItem;
+			modiferChoices.Content = sideMod;
 		}
 
 		public void FriedMiraakSelected() {
-			modiferChoices.Content = new SideModifiers();
+			SideModifiers sideMod = new SideModifiers();
+			foodItem = new FriedMiraak();
+			sideMod.DataContext = foodItem;
+			modiferChoices.Content = sideMod;
 		}
 
 		public void OtarGritsSelected() {
-			modiferChoices.Content = new SideModifiers();
+			SideModifiers sideMod = new SideModifiers();
+			foodItem = new MadOtarGrits();
+			sideMod.DataContext = foodItem;
+			modiferChoices.Content = sideMod;
 		}
 
 		public void SaladSelected() {
-			modiferChoices.Content = new SideModifiers();
+			SideModifiers sideMod = new SideModifiers();
+			foodItem = new VokunSalad();
+			sideMod.DataContext = foodItem;
+			modiferChoices.Content = sideMod;
 		}
 
 		public void BriarHeartBurgerSelected() {
-			modiferChoices.Content = new BurgerModifiers();
+			BurgerModifiers foodMods = new BurgerModifiers();
+			foodMods.eggToggleButton.Visibility = Visibility.Collapsed;
+			foodMods.baconToggleButton.Visibility = Visibility.Collapsed;
+			foodMods.mayToggleButton.Visibility = Visibility.Collapsed;
+			foodMods.lettuceToggleButton.Visibility = Visibility.Collapsed;
+			foodMods.tomatoToggleButton.Visibility = Visibility.Collapsed;
+			foodItem = new BriarheartBurger();
+			foodMods.DataContext = foodItem;
+			modiferChoices.Content = foodMods;
 		}
 
 		public void DoubleDraugrSelected() {
-			modiferChoices.Content = new BurgerModifiers();
+			BurgerModifiers foodMods = new BurgerModifiers();
+			foodMods.eggToggleButton.Visibility = Visibility.Collapsed;
+			foodMods.baconToggleButton.Visibility = Visibility.Collapsed;
+			foodItem = new DoubleDraugr();
+			foodMods.DataContext = foodItem;
+			modiferChoices.Content = foodMods;
 		}
 
 		public void ThalmorTripleSelected() {
-			modiferChoices.Content = new BurgerModifiers();
+			BurgerModifiers foodMods = new BurgerModifiers();
+			foodItem = new ThalmorTriple();
+			foodMods.DataContext = foodItem;
+			modiferChoices.Content = foodMods;
 		}
 
 		public void GardenOrcOmeletteSelected() {
-			modiferChoices.Content = new OmeletteModifiers();
+			OmeletteModifiers foodMods = new OmeletteModifiers();
+			foodItem = new GardenOrcOmelette();
+			foodMods.DataContext = foodItem;
+			modiferChoices.Content = foodMods;
 		}
 
 		public void PhillyPoacherSelected() {
-			modiferChoices.Content = new CheeseSteakModifiers();
+			CheeseSteakModifiers foodMods = new CheeseSteakModifiers();
+			foodItem = new PhillyPoacher();
+			foodMods.DataContext = foodItem;
+			modiferChoices.Content = foodMods;
 		}
 
 		public void SmokehouseSkeletonSelected() {
-			modiferChoices.Content = new SHSkeletonModifiers();
+			SHSkeletonModifiers foodMods = new SHSkeletonModifiers();
+			foodItem = new SmokehouseSkeleton();
+			foodMods.DataContext = foodItem;
+			modiferChoices.Content = foodMods;
 		}
 
 		public void ThugsTBoneSelected() {
-			modiferChoices.Content = null;
+			ContentControl foodMods = new ContentControl();
+			foodItem = new ThugsTBone();
+			foodMods.DataContext = foodItem;
+			modiferChoices.Content = foodMods;
 		}
 	}
 }

@@ -26,9 +26,14 @@ namespace PointOfSale.Drink {
 			mainWindow.CoffeeSelected();
 		}
 
-		void AppleJuiceOrMilkClick(object sender, RoutedEventArgs e) {
+		void MilkClick(object sender, RoutedEventArgs e) {
 			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-			mainWindow.AppleJuiceOrMilkSelected();
+			mainWindow.MilkSelected();
+		}
+
+		void AppleJuiceClick(object sender, RoutedEventArgs e) {
+			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+			mainWindow.AppleJuiceSelected();
 		}
 
 		void WaterClick(object sender, RoutedEventArgs e) {

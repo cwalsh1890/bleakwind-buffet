@@ -129,5 +129,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Throws<NotImplementedException>(() => og.Price);
             Assert.Throws<NotImplementedException>(() => og.Calories);
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            MadOtarGrits og = new MadOtarGrits();
+            Assert.PropertyChanged(og, "size", () => {
+                og.Size = Size.Large;
+            });
+        }
     }
 }

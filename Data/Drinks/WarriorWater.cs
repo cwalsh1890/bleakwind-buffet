@@ -8,9 +8,10 @@ using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Menu;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks {
-	public class WarriorWater : Drink, IOrderItem {
+	public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged {
 		/// <summary>
 		/// holds the size of the drink
 		/// </summary>
@@ -18,7 +19,10 @@ namespace BleakwindBuffet.Data.Drinks {
 		public override Size Size {
 			get { return this.size; }
 			set {
-				size = value;
+				if (size != value) {
+					size = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("size"));
+				}
 			}
 		}
 
@@ -38,6 +42,7 @@ namespace BleakwindBuffet.Data.Drinks {
 						ice = false;
 						specialInstructions.Add("Hold ice");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ice"));
 				}
 			}
 		}
@@ -58,6 +63,7 @@ namespace BleakwindBuffet.Data.Drinks {
 						lemon = false;
 						specialInstructions.Remove("Add lemon");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("lemon"));
 				}
 			}
 		}
@@ -84,6 +90,12 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// list of special instructions to be returned 
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
+
+		/// <summary>
+		/// event to signal that a property has been changed
+		/// </summary>
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}

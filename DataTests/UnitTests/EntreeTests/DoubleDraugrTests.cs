@@ -316,5 +316,41 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             DoubleDraugr dd = new DoubleDraugr();
             Assert.Equal("Double Draugr", dd.ToString());
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, "bun", () => {
+                dd.Bun = false;
+            });
+
+            Assert.PropertyChanged(dd, "ketchup", () => {
+                dd.Ketchup = false;
+            });
+
+            Assert.PropertyChanged(dd, "mustard", () => {
+                dd.Mustard = false;
+            });
+
+            Assert.PropertyChanged(dd, "pickle", () => {
+                dd.Pickle = false;
+            });
+
+            Assert.PropertyChanged(dd, "cheese", () => {
+                dd.Cheese = false;
+            });
+
+            Assert.PropertyChanged(dd, "tomato", () => {
+                dd.Tomato = false;
+            });
+
+            Assert.PropertyChanged(dd, "lettuce", () => {
+                dd.Lettuce = false;
+            });
+
+            Assert.PropertyChanged(dd, "mayo", () => {
+                dd.Mayo = false;
+            });
+        }
     }
 }

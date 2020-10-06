@@ -15,17 +15,17 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ToggleButton Name="sausageToggleButton" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="sausageToggleButton" IsChecked="{Binding SausageLink}" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Sausage Link
         </ToggleButton>
-        <ToggleButton Name="eggToggleButton" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="eggToggleButton" IsChecked="{Binding Egg}" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Egg
         </ToggleButton>
 
-        <ToggleButton Name="hashBrownsToggleButton" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="hashBrownsToggleButton" IsChecked="{Binding HashBrowns}" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Hash Browns
         </ToggleButton>
-        <ToggleButton Name="pancakeToggleButton" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="pancakeToggleButton" IsChecked="{Binding Pancake}" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Pancake
         </ToggleButton>
     </Grid>

@@ -8,9 +8,10 @@ using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Menu;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks {
-	public class CandlehearthCoffee : Drink, IOrderItem {
+	public class CandlehearthCoffee : Drink, IOrderItem, INotifyPropertyChanged {
 		/// <summary>
 		/// holds the size of the coffee
 		/// </summary>
@@ -18,7 +19,10 @@ namespace BleakwindBuffet.Data.Drinks {
 		public override Size Size {
 			get { return this.size; }
 			set {
-				size = value;
+				if (size != value) {
+					size = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("size"));
+				}
 			}
 		}
 
@@ -38,6 +42,7 @@ namespace BleakwindBuffet.Data.Drinks {
 						ice = false;
 						specialInstructions.Remove("Add ice");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ice"));
 				}
 			}
 		}
@@ -51,6 +56,7 @@ namespace BleakwindBuffet.Data.Drinks {
 			set {
 				if (value != decaf) {
 					decaf = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("decaf"));
 				}
 			}
 		}
@@ -71,6 +77,7 @@ namespace BleakwindBuffet.Data.Drinks {
 						roomForCream = false;
 						specialInstructions.Remove("Add cream");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("cream"));
 				}
 			}
 		}
@@ -113,6 +120,12 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// holds any special instructions for making the drink
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
+
+		/// <summary>
+		/// event to signal that a property has been changed
+		/// </summary>
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}

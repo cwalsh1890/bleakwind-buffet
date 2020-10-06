@@ -5,11 +5,12 @@
  */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class PhillyPoacher : Entree, IOrderItem {
+	public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged {
 		/// <summary>
 		/// holds whether or not the sandwich should have steak
 		/// </summary>
@@ -26,6 +27,7 @@ namespace BleakwindBuffet.Data.Entrees
 						sirloin = false;
 						specialInstructions.Add("Hold sirloin");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("sirloin"));
 				}
 			}
 		}
@@ -46,6 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
 						onion = false;
 						specialInstructions.Add("Hold onion");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("onion"));
 				}
 			}
 		}
@@ -66,6 +69,7 @@ namespace BleakwindBuffet.Data.Entrees
 						roll = false;
 						specialInstructions.Add("Hold roll");
 					}
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("roll"));
 				}
 			}
 		}
@@ -84,6 +88,12 @@ namespace BleakwindBuffet.Data.Entrees
 		/// holds any special instructions for the sandwich
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
+
+		/// <summary>
+		/// event to flag when a property is changed
+		/// </summary>
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}

@@ -16,8 +16,14 @@ namespace PointOfSale {
 	/// Interaction logic for BottomControls.xaml
 	/// </summary>
 	public partial class BottomControls : UserControl {
-		public BottomControls() {
+		MainWindow mainWindow;
+		public BottomControls(MainWindow mw) {
 			InitializeComponent();
+			mainWindow = mw;
+		}
+
+		void OnAddClick(object sender, RoutedEventArgs e) {
+			mainWindow.AddItem();
 		}
 	}
 }

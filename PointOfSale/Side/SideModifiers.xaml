@@ -12,13 +12,13 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Name="smallButton" Grid.Column="0" Grid.Row="0" FontSize="25" FontFamily="Arial">
+        <Button Name="smallButton" Click="SizeClick" Grid.Column="0" Grid.Row="0" FontSize="25" FontFamily="Arial">
             Small
         </Button>
-        <Button Name="mediumButton" Grid.Column="0" Grid.Row="1" FontSize="25" FontFamily="Arial">
+        <Button Name="mediumButton" Click="SizeClick" Grid.Column="0" Grid.Row="1" FontSize="25" FontFamily="Arial">
             Medium
         </Button>
-        <Button Name="largeButton" Grid.Column="0" Grid.Row="2" FontSize="25" FontFamily="Arial">
+        <Button Name="largeButton" Click="SizeClick" Grid.Column="0" Grid.Row="2" FontSize="25" FontFamily="Arial">
             Large
         </Button>
     </Grid>

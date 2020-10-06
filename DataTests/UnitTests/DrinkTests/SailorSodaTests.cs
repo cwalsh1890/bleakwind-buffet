@@ -12,6 +12,7 @@ using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using NuGet.Frameworks;
 using BleakwindBuffet.Data.Menu;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -211,6 +212,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             ss.Size = (Size)4;
             Assert.Throws<NotImplementedException>(() => ss.Price);
             Assert.Throws<NotImplementedException>(() => ss.Calories);
+        }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            SailorSoda ss = new SailorSoda();
+
+            Assert.PropertyChanged(ss, "size", () => {
+                ss.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(ss, "flavor", () => {
+                ss.Flavor = SodaFlavor.Blackberry;
+            });
+
+            Assert.PropertyChanged(ss, "ice", () => {
+                ss.Ice = false;
+            });
         }
     }
 }

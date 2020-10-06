@@ -17,22 +17,21 @@ namespace PointOfSale {
 	/// Interaction logic for TypeSelector.xaml
 	/// </summary>
 	public partial class TypeSelector : UserControl {
-		public TypeSelector() {
+		MainWindow mainWindow;
+		public TypeSelector(MainWindow mw) {
 			InitializeComponent();
+			mainWindow = mw;
 		}
 
 		void SelectEntree(object sender, RoutedEventArgs e) {
-			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
 			mainWindow.EntreeSelected();
 		}
 
 		void SelectSide(object sender, RoutedEventArgs e) {
-			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
 			mainWindow.SideSelected();
 		}
 
 		void SelectDrink(object sender, RoutedEventArgs e) {
-			MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
 			mainWindow.DrinkSelected();
 		}
 	}

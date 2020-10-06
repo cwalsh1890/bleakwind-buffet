@@ -15,14 +15,14 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ToggleButton Name="onionToggleButton" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="onionToggleButton" IsChecked="{Binding Onion}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Onion
         </ToggleButton>
 
-        <ToggleButton Name="sirloinToggleButton" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="sirloinToggleButton" IsChecked="{Binding Sirloin}" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Sirloin
         </ToggleButton>
-        <ToggleButton Name="rollToggleButton" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="rollToggleButton" IsChecked="{Binding Roll}" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Roll
         </ToggleButton>
     </Grid>

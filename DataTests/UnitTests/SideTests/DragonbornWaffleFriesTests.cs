@@ -13,8 +13,7 @@ using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
-    public class DragonbornWaffleFriesTests
-    {
+    public class DragonbornWaffleFriesTests {
         /// <summary>
         /// tests to ensure that the side is inheriting the Side class
         /// </summary>
@@ -37,8 +36,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         /// Tests to ensure that the size is small by default
         /// </summary>
         [Fact]
-        public void ShouldBeSmallByDefault()
-        {
+        public void ShouldBeSmallByDefault() {
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             Assert.Equal(Size.Small, wf.Size);
         }
@@ -47,8 +45,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         /// Tests to ensure that the size is able to change
         /// </summary>
         [Fact]
-        public void ShouldBeAbleToSetSize()
-        {
+        public void ShouldBeAbleToSetSize() {
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             wf.Size = Size.Large;
             Assert.Equal(Size.Large, wf.Size);
@@ -63,8 +60,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         /// </summary>
         /// <remarks>There is no intended way for anything to be added to special instructions</remarks>
         [Fact]
-        public void ShouldReturnCorrectSpecialInstructions()
-        {
+        public void ShouldReturnCorrectSpecialInstructions() {
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             Assert.Empty(wf.SpecialInstructions);
         }
@@ -78,8 +74,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Small, 0.42)]
         [InlineData(Size.Medium, 0.76)]
         [InlineData(Size.Large, 0.96)]
-        public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
-        {
+        public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price) {
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             wf.Size = size;
             Assert.Equal(price, wf.Price);
@@ -94,8 +89,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Small, 77)]
         [InlineData(Size.Medium, 89)]
         [InlineData(Size.Large, 100)]
-        public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
-        {
+        public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories) {
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             wf.Size = size;
             Assert.Equal(calories, wf.Calories);
@@ -110,8 +104,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Small, "Small Dragonborn Waffle Fries")]
         [InlineData(Size.Medium, "Medium Dragonborn Waffle Fries")]
         [InlineData(Size.Large, "Large Dragonborn Waffle Fries")]
-        public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
-        {
+        public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name) {
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
             wf.Size = size;
             Assert.Equal(name, wf.ToString());
@@ -121,12 +114,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
         /// </summary>
         [Fact]
-        public void ThrowsExceptionIfInvalidSizeIsUsed()
-        {
+        public void ThrowsExceptionIfInvalidSizeIsUsed() {
             DragonbornWaffleFries wf = new DragonbornWaffleFries();
-            wf.Size = (Size)4;
+            wf.Size = (Size) 4;
             Assert.Throws<NotImplementedException>(() => wf.Price);
             Assert.Throws<NotImplementedException>(() => wf.Calories);
+        }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            DragonbornWaffleFries wf = new DragonbornWaffleFries();
+            Assert.PropertyChanged(wf, "size", () => {
+                wf.Size = Size.Large;
+            });
         }
     }
 }

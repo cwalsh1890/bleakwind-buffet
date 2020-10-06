@@ -5,6 +5,7 @@
  */
 
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Menu;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace BleakwindBuffet.Data.Drinks {
 	/// <summary>
 	/// class for representing the properties of drinks
 	/// </summary>
-	public abstract class Drink {
+	public abstract class Drink : ISizeable {
 		/// <summary>
 		/// the size of the drink
 		/// </summary>

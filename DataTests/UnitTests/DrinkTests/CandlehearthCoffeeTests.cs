@@ -13,8 +13,7 @@ using System;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
-    public class CandlehearthCoffeeTests
-    {
+    public class CandlehearthCoffeeTests {
         /// <summary>
         /// tests to ensure that the drink is inheriting the Drink class
         /// </summary>
@@ -37,8 +36,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that the ice property of the drink is originally initialized to false
         /// </summary>
         [Fact]
-        public void ShouldNotIncludeIceByDefault()
-        {
+        public void ShouldNotIncludeIceByDefault() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             Assert.False(cf.Ice);
         }
@@ -47,8 +45,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that the decaf property of the drink is originally initialized to false
         /// </summary>
         [Fact]
-        public void ShouldNotBeDecafByDefault()
-        {
+        public void ShouldNotBeDecafByDefault() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             Assert.False(cf.Decaf);
         }
@@ -57,8 +54,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that the roomForCream property of the drink is originally initialized to false
         /// </summary>
         [Fact]
-        public void ShouldNotHaveRoomForCreamByDefault()
-        {
+        public void ShouldNotHaveRoomForCreamByDefault() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             Assert.False(cf.RoomForCream);
         }
@@ -67,8 +63,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that the size of the drink is small by default
         /// </summary>
         [Fact]
-        public void ShouldBeSmallByDefault()
-        {
+        public void ShouldBeSmallByDefault() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             Assert.Equal(Size.Small, cf.Size);
         }
@@ -77,8 +72,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that the ice property is able to be set
         /// </summary>
         [Fact]
-        public void ShouldBeAbleToSetIce()
-        {
+        public void ShouldBeAbleToSetIce() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.Ice = true;
             Assert.True(cf.Ice);
@@ -90,8 +84,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that the decaf property is able to be set
         /// </summary>
         [Fact]
-        public void ShouldBeAbleToSetDecaf()
-        {
+        public void ShouldBeAbleToSetDecaf() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.Decaf = true;
             Assert.True(cf.Decaf);
@@ -103,8 +96,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that the roomForCream property is able to be set
         /// </summary>
         [Fact]
-        public void ShouldBeAbleToSetRoomForCream()
-        {
+        public void ShouldBeAbleToSetRoomForCream() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.RoomForCream = true;
             Assert.True(cf.RoomForCream);
@@ -116,8 +108,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// tests to ensure that the size property is able to be set for the drink
         /// </summary>
         [Fact]
-        public void ShouldBeAbleToSetSize()
-        {
+        public void ShouldBeAbleToSetSize() {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.Size = Size.Large;
             Assert.Equal(Size.Large, cf.Size);
@@ -136,8 +127,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Small, 0.75)]
         [InlineData(Size.Medium, 1.25)]
         [InlineData(Size.Large, 1.75)]
-        public void ShouldHaveCorrectPriceForSize(Size size, double price)
-        {
+        public void ShouldHaveCorrectPriceForSize(Size size, double price) {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.Size = size;
             Assert.Equal(price, cf.Price);
@@ -152,8 +142,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Small, 7)]
         [InlineData(Size.Medium, 10)]
         [InlineData(Size.Large, 20)]
-        public void ShouldHaveCorrectCaloriesForSize(Size size, uint cal)
-        {
+        public void ShouldHaveCorrectCaloriesForSize(Size size, uint cal) {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.Size = size;
             Assert.Equal(cal, cf.Calories);
@@ -169,8 +158,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(true, false)]
         [InlineData(false, true)]
         [InlineData(false, false)]
-        public void ShouldHaveCorrectSpecialInstructions(bool includeIce, bool includeCream)
-        {
+        public void ShouldHaveCorrectSpecialInstructions(bool includeIce, bool includeCream) {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.Ice = includeIce;
             cf.RoomForCream = includeCream;
@@ -193,8 +181,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(false, Size.Small, "Small Candlehearth Coffee")]
         [InlineData(false, Size.Medium, "Medium Candlehearth Coffee")]
         [InlineData(false, Size.Large, "Large Candlehearth Coffee")]
-        public void ShouldReturnCorrectToStringBasedOnSize(bool decaf, Size size, string name)
-        {
+        public void ShouldReturnCorrectToStringBasedOnSize(bool decaf, Size size, string name) {
             CandlehearthCoffee cf = new CandlehearthCoffee();
             cf.Size = size;
             cf.Decaf = decaf;
@@ -205,12 +192,31 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// Tests to ensure that an exception is thrown if an invalid size is used to try an access price or calories
         /// </summary>
         [Fact]
-        public void ThrowsExceptionIfInvalidSizeIsUsed()
-        {
+        public void ThrowsExceptionIfInvalidSizeIsUsed() {
             CandlehearthCoffee cc = new CandlehearthCoffee();
-            cc.Size = (Size)4;
+            cc.Size = (Size) 4;
             Assert.Throws<NotImplementedException>(() => cc.Price);
             Assert.Throws<NotImplementedException>(() => cc.Calories);
+        }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "size", () => {
+                cc.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(cc, "cream", () => {
+                cc.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(cc, "ice", () => {
+                cc.Ice = true;
+            });
+
+            Assert.PropertyChanged(cc, "decaf", () => {
+                cc.Decaf = true;
+            });
         }
     }
 }

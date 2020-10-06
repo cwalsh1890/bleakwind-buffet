@@ -8,9 +8,10 @@ using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Menu;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides {
-	public class DragonbornWaffleFries : Side, IOrderItem {
+	public class DragonbornWaffleFries : Side, IOrderItem, INotifyPropertyChanged {
 		/// <summary>
 		/// holds the size of the side
 		/// </summary>
@@ -18,7 +19,10 @@ namespace BleakwindBuffet.Data.Sides {
 		public override Size Size {
 			get { return this.size; }
 			set {
-				size = value;
+				if (size != value) {
+					size = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("size"));
+				}
 			}
 		}
 
@@ -60,6 +64,12 @@ namespace BleakwindBuffet.Data.Sides {
 		/// list of special instructions to be returned 
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();
+
+		/// <summary>
+		/// event to signal that a property has been changed
+		/// </summary>
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public override List<string> SpecialInstructions {
 			get { return new List<string>(specialInstructions); }
 		}

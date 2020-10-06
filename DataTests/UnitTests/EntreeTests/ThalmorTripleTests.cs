@@ -374,5 +374,49 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             ThalmorTriple tt = new ThalmorTriple();
             Assert.Equal("Thalmor Triple", tt.ToString());
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            ThalmorTriple tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, "bun", () => {
+                tt.Bun = false;
+            });
+
+            Assert.PropertyChanged(tt, "ketchup", () => {
+                tt.Ketchup = false;
+            });
+
+            Assert.PropertyChanged(tt, "mustard", () => {
+                tt.Mustard = false;
+            });
+
+            Assert.PropertyChanged(tt, "pickle", () => {
+                tt.Pickle = false;
+            });
+
+            Assert.PropertyChanged(tt, "cheese", () => {
+                tt.Cheese = false;
+            });
+
+            Assert.PropertyChanged(tt, "tomato", () => {
+                tt.Tomato = false;
+            });
+
+            Assert.PropertyChanged(tt, "lettuce", () => {
+                tt.Lettuce = false;
+            });
+
+            Assert.PropertyChanged(tt, "mayo", () => {
+                tt.Mayo = false;
+            });
+
+            Assert.PropertyChanged(tt, "bacon", () => {
+                tt.Bacon = false;
+            });
+
+            Assert.PropertyChanged(tt, "egg", () => {
+                tt.Egg = false;
+            });
+        }
     }
 }

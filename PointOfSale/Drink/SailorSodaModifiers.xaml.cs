@@ -16,8 +16,9 @@ namespace PointOfSale.Drink {
 	/// Interaction logic for SailorSodaModifiers.xaml
 	/// </summary>
 	public partial class SailorSodaModifiers : UserControl {
-		public SailorSodaModifiers() {
+		public SailorSodaModifiers(DrinkModifiers dm) {
 			InitializeComponent();
+			drinkModifiers.Content = dm;
 		}
 	}
 }

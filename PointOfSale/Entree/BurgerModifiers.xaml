@@ -15,41 +15,41 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition x:Name="Row4"/>
+            <RowDefinition x:Name="Row5"/>
         </Grid.RowDefinitions>
-        <ToggleButton Name="bunToggleButton" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="bunToggleButton" IsChecked="{Binding Bun}" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Bun
         </ToggleButton>
-        <ToggleButton Name="ketchupToggleButton" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="ketchupToggleButton" IsChecked="{Binding Ketchup}" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Ketchup
         </ToggleButton>
 
-        <ToggleButton Name="PickleToggleButton" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="PickleToggleButton" IsChecked="{Binding Pickle}" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Pickle
         </ToggleButton>
-        <ToggleButton Name="mustardToggleButton" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="mustardToggleButton" IsChecked="{Binding Mustard}" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Mustard
         </ToggleButton>
 
-        <ToggleButton Name="cheeseToggleButton" Grid.Column="0" Grid.Row="2" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="cheeseToggleButton" IsChecked="{Binding Cheese}" Grid.Column="0" Grid.Row="2" FontSize="20" FontFamily="Arial">
             Cheese
         </ToggleButton>
-        <ToggleButton Name="tomatoToggleButton" Grid.Column="1" Grid.Row="2" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="tomatoToggleButton" IsChecked="{Binding Tomato}" Grid.Column="1" Grid.Row="2" FontSize="20" FontFamily="Arial">
             Tomato
         </ToggleButton>
 
-        <ToggleButton Name="lettuceToggleButton" Grid.Column="0" Grid.Row="3" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="lettuceToggleButton" IsChecked="{Binding Lettuce}" Grid.Column="0" Grid.Row="3" FontSize="20" FontFamily="Arial">
             Lettuce
         </ToggleButton>
-        <ToggleButton Name="mayToggleButton" Grid.Column="1" Grid.Row="3" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="mayToggleButton" IsChecked="{Binding Mayo}" Grid.Column="1" Grid.Row="3" FontSize="20" FontFamily="Arial">
             Mayo
         </ToggleButton>
 
-        <ToggleButton Name="baconToggleButton" Grid.Column="0" Grid.Row="4" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="baconToggleButton" IsChecked="{Binding Bacon}" Grid.Column="0" Grid.Row="4" FontSize="20" FontFamily="Arial">
             Bacon
         </ToggleButton>
-        <ToggleButton Name="eggToggleButton" Grid.Column="1" Grid.Row="4" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="eggToggleButton" IsChecked="{Binding Egg}" Grid.Column="1" Grid.Row="4" FontSize="20" FontFamily="Arial">
             Egg
         </ToggleButton>
     </Grid>

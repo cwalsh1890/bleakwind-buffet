@@ -222,5 +222,29 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             BriarheartBurger bb = new BriarheartBurger();
             Assert.Equal("Briarheart Burger", bb.ToString());
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, "bun", () => {
+                bb.Bun = false;
+            });
+
+            Assert.PropertyChanged(bb, "ketchup", () => {
+                bb.Ketchup = false;
+            });
+
+            Assert.PropertyChanged(bb, "mustard", () => {
+                bb.Mustard = false;
+            });
+
+            Assert.PropertyChanged(bb, "pickle", () => {
+                bb.Pickle = false;
+            });
+
+            Assert.PropertyChanged(bb, "cheese", () => {
+                bb.Cheese = false;
+            });
+        }
     }
 }

@@ -23,26 +23,26 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Name="smallButton" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
+            <Button Name="smallButton" Click="SizeClick" Grid.Column="0" Grid.Row="0" FontSize="20" FontFamily="Arial">
                 Small
             </Button>
-            <Button Name="mediumButton" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
+            <Button Name="mediumButton" Click="SizeClick" Grid.Column="0" Grid.Row="1" FontSize="20" FontFamily="Arial">
                 Medium
             </Button>
-            <Button Name="largeButton" Grid.Column="0" Grid.Row="2" FontSize="20" FontFamily="Arial">
+            <Button Name="largeButton" Click="SizeClick" Grid.Column="0" Grid.Row="2" FontSize="20" FontFamily="Arial">
                 Large
             </Button>
         </Grid>
-        <ToggleButton Name="iceToggleButton" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="iceToggleButton" IsChecked="{Binding Ice}" Grid.Column="1" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Ice
         </ToggleButton>
-        <ToggleButton Name="lemonToggleButton" Grid.Column="2" Grid.Row="0" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="lemonToggleButton" IsChecked="{Binding Lemon}" Grid.Column="2" Grid.Row="0" FontSize="20" FontFamily="Arial">
             Lemon
         </ToggleButton>
-        <ToggleButton Name="creamToggleButton" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="creamToggleButton" IsChecked="{Binding Cream}" Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Cream
         </ToggleButton>
-        <ToggleButton Name="decafToggleButton" Grid.Column="2" Grid.Row="1" FontSize="20" FontFamily="Arial">
+        <ToggleButton Name="decafToggleButton" IsChecked="{Binding Decaf}" Grid.Column="2" Grid.Row="1" FontSize="20" FontFamily="Arial">
             Decaf
         </ToggleButton>
     </Grid>

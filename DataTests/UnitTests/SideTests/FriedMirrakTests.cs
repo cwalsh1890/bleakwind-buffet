@@ -128,5 +128,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Throws<NotImplementedException>(() => fm.Price);
             Assert.Throws<NotImplementedException>(() => fm.Calories);
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "size", () => {
+                fm.Size = Size.Large;
+            });
+        }
     }
 }

@@ -8,12 +8,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Sides {
 	/// <summary>
 	/// class for representing the properties of sides
 	/// </summary>
-	public abstract class Side {
+	public abstract class Side : ISizeable {
 		/// <summary>
 		/// the size of the side
 		/// </summary>

@@ -128,5 +128,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Throws<NotImplementedException>(() => vs.Price);
             Assert.Throws<NotImplementedException>(() => vs.Calories);
         }
+
+        [Fact]
+        public void ShouldNotifyPropertyChanged() {
+            VokunSalad vs = new VokunSalad();
+            Assert.PropertyChanged(vs, "size", () => {
+                vs.Size = Size.Large;
+            });
+        }
     }
 }

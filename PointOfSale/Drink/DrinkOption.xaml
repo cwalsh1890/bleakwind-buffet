@@ -17,13 +17,13 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Click="AppleJuiceOrMilkClick" Grid.Row="0" FontSize="15" FontFamily="Arial">
+        <Button Click="AppleJuiceClick" Grid.Row="0" FontSize="15" FontFamily="Arial">
             Arentino AJ
         </Button>
         <Button Click="SelectCoffeeClick" Grid.Row="1" FontSize="15" FontFamily="Arial">
             CH Coffee
         </Button>
-        <Button Click="AppleJuiceOrMilkClick" Grid.Row="2" FontSize="15" FontFamily="Arial">
+        <Button Click="MilkClick" Grid.Row="2" FontSize="15" FontFamily="Arial">
             Markarth Milk
         </Button>
         <Button Click="SodaClick" Grid.Row="3" FontSize="15" FontFamily="Arial">

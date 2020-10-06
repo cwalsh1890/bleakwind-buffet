@@ -13,7 +13,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="addButton" Grid.Column="0" FontSize="20" FontFamily="Arial">
+        <Button Name="addButton" Click="OnAddClick" Grid.Column="0" FontSize="20" FontFamily="Arial">
             Add
         </Button>
         <Button Name="editButton" Grid.Column="1" FontSize="20" FontFamily="Arial">

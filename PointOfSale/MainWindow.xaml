@@ -20,16 +20,18 @@
             <RowDefinition Height="7*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <ContentControl x:Name="BotControl" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Margin="5"/>
         
-        <local:BottomControls Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Margin="5"/>
-        <local:TypeSelector Grid.Column="0" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch"/>
+        <ContentControl x:Name="TypeSelector" Grid.Column="0" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch"/>
+        
         <ContentControl Grid.Column="1" Grid.Row="0" Name="itemChoice" Margin="5"  HorizontalAlignment="Stretch">
             
         </ContentControl>
         <ContentControl Grid.Column="2" Grid.Row="0" Name="modiferChoices"  Margin="5"  HorizontalAlignment="Stretch">
             
         </ContentControl>
-        <local:RuningTotal Grid.Column="3" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch">
+        <local:RuningTotal x:Name="Total" Grid.Column="3" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch">
             
         </local:RuningTotal>
         
