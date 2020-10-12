@@ -378,44 +378,85 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             ThalmorTriple tt = new ThalmorTriple();
-            Assert.PropertyChanged(tt, "bun", () => {
+
+            Assert.PropertyChanged(tt, "Bun", () => {
                 tt.Bun = false;
             });
 
-            Assert.PropertyChanged(tt, "ketchup", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Bun = true;
+            });
+
+            Assert.PropertyChanged(tt, "Ketchup", () => {
                 tt.Ketchup = false;
             });
 
-            Assert.PropertyChanged(tt, "mustard", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Ketchup = true;
+            });
+
+            Assert.PropertyChanged(tt, "Mustard", () => {
                 tt.Mustard = false;
             });
 
-            Assert.PropertyChanged(tt, "pickle", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Mustard = true;
+            });
+
+            Assert.PropertyChanged(tt, "Pickle", () => {
                 tt.Pickle = false;
             });
 
-            Assert.PropertyChanged(tt, "cheese", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Pickle = true;
+            });
+
+            Assert.PropertyChanged(tt, "Cheese", () => {
                 tt.Cheese = false;
             });
 
-            Assert.PropertyChanged(tt, "tomato", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Cheese = true;
+            });
+
+            Assert.PropertyChanged(tt, "Tomato", () => {
                 tt.Tomato = false;
             });
 
-            Assert.PropertyChanged(tt, "lettuce", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Tomato = true;
+            });
+
+            Assert.PropertyChanged(tt, "Lettuce", () => {
                 tt.Lettuce = false;
             });
 
-            Assert.PropertyChanged(tt, "mayo", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Lettuce = true;
+            });
+
+            Assert.PropertyChanged(tt, "Mayo", () => {
                 tt.Mayo = false;
             });
 
-            Assert.PropertyChanged(tt, "bacon", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Mayo = true;
+            });
+
+            Assert.PropertyChanged(tt, "Bacon", () => {
                 tt.Bacon = false;
             });
 
-            Assert.PropertyChanged(tt, "egg", () => {
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Bacon = true;
+            });
+
+            Assert.PropertyChanged(tt, "Egg", () => {
                 tt.Egg = false;
+            });
+
+            Assert.PropertyChanged(tt, "SpecialInstructions", () => {
+                tt.Egg = true;
             });
         }
     }

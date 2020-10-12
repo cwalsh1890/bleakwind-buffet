@@ -202,19 +202,35 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             CandlehearthCoffee cc = new CandlehearthCoffee();
-            Assert.PropertyChanged(cc, "size", () => {
+            Assert.PropertyChanged(cc, "Size", () => {
                 cc.Size = Size.Large;
             });
 
-            Assert.PropertyChanged(cc, "cream", () => {
+            Assert.PropertyChanged(cc, "Price", () => {
+                cc.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(cc, "Calories", () => {
+                cc.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(cc, "Cream", () => {
                 cc.RoomForCream = true;
             });
 
-            Assert.PropertyChanged(cc, "ice", () => {
+            Assert.PropertyChanged(cc, "SpecialInstructions", () => {
+                cc.RoomForCream = false;
+            });
+
+            Assert.PropertyChanged(cc, "Ice", () => {
                 cc.Ice = true;
             });
 
-            Assert.PropertyChanged(cc, "decaf", () => {
+            Assert.PropertyChanged(cc, "SpecialInstructions", () => {
+                cc.Ice = false;
+            });
+
+            Assert.PropertyChanged(cc, "Decaf", () => {
                 cc.Decaf = true;
             });
         }

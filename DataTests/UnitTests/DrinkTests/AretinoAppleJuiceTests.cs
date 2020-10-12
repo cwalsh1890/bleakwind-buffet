@@ -160,10 +160,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             ArentinoAppleJuice aj = new ArentinoAppleJuice();
-            Assert.PropertyChanged(aj, "ice", () => {
+            Assert.PropertyChanged(aj, "Ice", () => {
                 aj.Ice = true;
             });
-            Assert.PropertyChanged(aj, "size", () => {
+
+            Assert.PropertyChanged(aj, "SpecialInstructions", () => {
+                aj.Ice = false;
+            });
+
+            Assert.PropertyChanged(aj, "Size", () => {
+                aj.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(aj, "Price", () => {
+                aj.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(aj, "Calories", () => {
                 aj.Size = Size.Large;
             });
         }

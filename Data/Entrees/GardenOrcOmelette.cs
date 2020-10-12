@@ -11,7 +11,7 @@ using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged {
+	public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged, IEntreeItem {
 		/// <summary>
 		/// holds whether or not the omelette should have broccoli
 		/// </summary>
@@ -28,7 +28,8 @@ namespace BleakwindBuffet.Data.Entrees
 						broccoli = false;
 						specialInstructions.Add("Hold broccoli");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("broccoli"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -49,7 +50,8 @@ namespace BleakwindBuffet.Data.Entrees
 						mushrooms = false;
 						specialInstructions.Add("Hold mushrooms");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("mushrooms"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -70,7 +72,8 @@ namespace BleakwindBuffet.Data.Entrees
 						tomato = false;
 						specialInstructions.Add("Hold tomato");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("tomato"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -91,7 +94,8 @@ namespace BleakwindBuffet.Data.Entrees
 						cheddar = false;
 						specialInstructions.Add("Hold cheddar");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("cheddar"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}

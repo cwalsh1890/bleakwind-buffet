@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks {
-	public class CandlehearthCoffee : Drink, IOrderItem, INotifyPropertyChanged {
+	public class CandlehearthCoffee : Drink, IOrderItem, INotifyPropertyChanged, IDrinkItem {
 		/// <summary>
 		/// holds the size of the coffee
 		/// </summary>
@@ -21,7 +21,9 @@ namespace BleakwindBuffet.Data.Drinks {
 			set {
 				if (size != value) {
 					size = value;
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("size"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
 				}
 			}
 		}
@@ -42,7 +44,8 @@ namespace BleakwindBuffet.Data.Drinks {
 						ice = false;
 						specialInstructions.Remove("Add ice");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ice"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -56,7 +59,7 @@ namespace BleakwindBuffet.Data.Drinks {
 			set {
 				if (value != decaf) {
 					decaf = value;
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("decaf"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
 				}
 			}
 		}
@@ -77,7 +80,8 @@ namespace BleakwindBuffet.Data.Drinks {
 						roomForCream = false;
 						specialInstructions.Remove("Add cream");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("cream"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cream"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}

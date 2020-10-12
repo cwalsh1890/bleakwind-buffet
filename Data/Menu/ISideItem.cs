@@ -1,33 +1,28 @@
-﻿/*
- * Author: Coby Walsh
- * Class: IOrderItem.cs
- * Purpose: Interface for all menu items
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Menu {
 	/// <summary>
-	/// interface items to be ordered
+	/// interface for side item
 	/// </summary>
-	public interface IOrderItem : INotifyPropertyChanged {
+	public interface ISideItem : INotifyPropertyChanged{
 		/// <summary>
-		/// the price of the item
+		/// price of the side item
 		/// </summary>
 		double Price { get; }
 		/// <summary>
-		/// the calories of the tiem
+		/// calories of the side item
 		/// </summary>
 		uint Calories { get; }
 		/// <summary>
-		/// any special instructions for preparing the item
+		/// special instructions to make the side item
 		/// </summary>
 		List<string> SpecialInstructions { get; }
+
 		/// <summary>
-		/// notifies when property is changed
+		/// event to signal when properties are changed
 		/// </summary>
 		event PropertyChangedEventHandler PropertyChanged;
 	}

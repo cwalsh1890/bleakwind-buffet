@@ -167,16 +167,24 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests {
 		[Fact]
 		public void ShouldNotifyPropertyChanged() {
 			WarriorWater ww = new WarriorWater();
-			Assert.PropertyChanged(ww, "size", () => {
+			Assert.PropertyChanged(ww, "Size", () => {
 				ww.Size = Size.Large;
 			});
 
-			Assert.PropertyChanged(ww, "ice", () => {
+			Assert.PropertyChanged(ww, "Ice", () => {
 				ww.Ice = false;
 			});
 
-			Assert.PropertyChanged(ww, "lemon", () => {
+			Assert.PropertyChanged(ww, "SpecialInstructions", () => {
+				ww.Ice = true;
+			});
+
+			Assert.PropertyChanged(ww, "Lemon", () => {
 				ww.Lemon = true;
+			});
+
+			Assert.PropertyChanged(ww, "SpecialInstructions", () => {
+				ww.Lemon = false;
 			});
 		}
 	}

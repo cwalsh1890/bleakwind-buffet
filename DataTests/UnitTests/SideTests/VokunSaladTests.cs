@@ -132,7 +132,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             VokunSalad vs = new VokunSalad();
-            Assert.PropertyChanged(vs, "size", () => {
+            Assert.PropertyChanged(vs, "Size", () => {
+                vs.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(vs, "Price", () => {
+                vs.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(vs, "Calories", () => {
                 vs.Size = Size.Large;
             });
         }

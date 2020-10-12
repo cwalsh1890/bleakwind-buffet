@@ -218,16 +218,28 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ShouldNotifyPropertyChanged() {
             SailorSoda ss = new SailorSoda();
 
-            Assert.PropertyChanged(ss, "size", () => {
+            Assert.PropertyChanged(ss, "Size", () => {
                 ss.Size = Size.Large;
             });
 
-            Assert.PropertyChanged(ss, "flavor", () => {
+            Assert.PropertyChanged(ss, "Price", () => {
+                ss.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(ss, "Calories", () => {
+                ss.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(ss, "Flavor", () => {
                 ss.Flavor = SodaFlavor.Blackberry;
             });
 
-            Assert.PropertyChanged(ss, "ice", () => {
+            Assert.PropertyChanged(ss, "Ice", () => {
                 ss.Ice = false;
+            });
+
+            Assert.PropertyChanged(ss, "SpecialInstructions", () => {
+                ss.Ice = true;
             });
         }
     }

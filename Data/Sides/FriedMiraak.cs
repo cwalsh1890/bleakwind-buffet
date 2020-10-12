@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides {
-	public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged {
+	public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged, ISideItem {
 		/// <summary>
 		/// holds the size of the side
 		/// </summary>
@@ -21,7 +21,9 @@ namespace BleakwindBuffet.Data.Sides {
 			set {
 				if (size != value) {
 					size = value;
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("size"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
 				}
 			}
 		}

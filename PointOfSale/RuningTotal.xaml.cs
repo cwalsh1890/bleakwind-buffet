@@ -1,4 +1,5 @@
-﻿using BleakwindBuffet.Data.Menu;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Menu;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,10 +18,9 @@ namespace PointOfSale {
 	/// Interaction logic for RuningTotal.xaml
 	/// </summary>
 	public partial class RuningTotal : UserControl {
-		List<IOrderItem> OrderItems = new List<IOrderItem>();
 		public RuningTotal() {
 			InitializeComponent();
-			//orderElements.ItemsSource = OrderItems;
+			this.DataContext = new Order();
 		}
 
 		/// <summary>
@@ -28,8 +28,15 @@ namespace PointOfSale {
 		/// </summary>
 		/// <param name="item">item to add</param>
 		public void AddElement(IOrderItem item) {
-			OrderItems.Add(item);
-			orderElements.Items.Add(item);
+			if (this.DataContext is Order order) { 
+				order.Add(item);
+			}
+		}
+
+		public void RemoveElement(IOrderItem item) {
+			if (this.DataContext is Order order) {
+				order.Remove(item);
+			}
 		}
 	}
 }

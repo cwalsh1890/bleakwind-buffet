@@ -226,24 +226,44 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             BriarheartBurger bb = new BriarheartBurger();
-            Assert.PropertyChanged(bb, "bun", () => {
+            Assert.PropertyChanged(bb, "Bun", () => {
                 bb.Bun = false;
             });
 
-            Assert.PropertyChanged(bb, "ketchup", () => {
+            Assert.PropertyChanged(bb, "SpecialInstructions", () => {
+                bb.Bun = true;
+            });
+
+            Assert.PropertyChanged(bb, "Ketchup", () => {
                 bb.Ketchup = false;
             });
 
-            Assert.PropertyChanged(bb, "mustard", () => {
+            Assert.PropertyChanged(bb, "SpecialInstructions", () => {
+                bb.Ketchup = true;
+            });
+
+            Assert.PropertyChanged(bb, "Mustard", () => {
                 bb.Mustard = false;
             });
 
-            Assert.PropertyChanged(bb, "pickle", () => {
+            Assert.PropertyChanged(bb, "SpecialInstructions", () => {
+                bb.Mustard = true;
+            });
+
+            Assert.PropertyChanged(bb, "Pickle", () => {
                 bb.Pickle = false;
             });
 
-            Assert.PropertyChanged(bb, "cheese", () => {
+            Assert.PropertyChanged(bb, "SpecialInstructions", () => {
+                bb.Pickle = true;
+            });
+
+            Assert.PropertyChanged(bb, "Cheese", () => {
                 bb.Cheese = false;
+            });
+
+            Assert.PropertyChanged(bb, "SpecialInstructions", () => {
+                bb.Cheese = true;
             });
         }
     }

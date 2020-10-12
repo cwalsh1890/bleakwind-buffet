@@ -10,7 +10,7 @@ using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged {
+	public class ThugsTBone : Entree, IOrderItem, INotifyPropertyChanged, IEntreeItem {
 		/// <summary>
 		/// holds the price of the steak
 		/// </summary>

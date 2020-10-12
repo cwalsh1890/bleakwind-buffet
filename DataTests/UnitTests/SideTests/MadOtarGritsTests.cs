@@ -133,7 +133,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             MadOtarGrits og = new MadOtarGrits();
-            Assert.PropertyChanged(og, "size", () => {
+            Assert.PropertyChanged(og, "Size", () => {
+                og.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(og, "Price", () => {
+                og.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(og, "Calories", () => {
                 og.Size = Size.Large;
             });
         }

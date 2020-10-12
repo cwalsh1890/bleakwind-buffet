@@ -166,16 +166,28 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             PhillyPoacher pp = new PhillyPoacher();
-            Assert.PropertyChanged(pp, "onion", () => {
+            Assert.PropertyChanged(pp, "Onion", () => {
                 pp.Onion = false;
             });
 
-            Assert.PropertyChanged(pp, "sirloin", () => {
+            Assert.PropertyChanged(pp, "SpecialInstructions", () => {
+                pp.Onion = true;
+            });
+
+            Assert.PropertyChanged(pp, "Sirloin", () => {
                 pp.Sirloin = false;
             });
 
-            Assert.PropertyChanged(pp, "roll", () => {
+            Assert.PropertyChanged(pp, "SpecialInstructions", () => {
+                pp.Sirloin = true;
+            });
+
+            Assert.PropertyChanged(pp, "Roll", () => {
                 pp.Roll = false;
+            });
+
+            Assert.PropertyChanged(pp, "SpecialInstructions", () => {
+                pp.Roll = true;
             });
         }
     }

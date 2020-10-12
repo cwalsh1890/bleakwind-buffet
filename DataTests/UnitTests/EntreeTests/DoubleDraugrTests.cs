@@ -320,36 +320,68 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             DoubleDraugr dd = new DoubleDraugr();
-            Assert.PropertyChanged(dd, "bun", () => {
+            Assert.PropertyChanged(dd, "Bun", () => {
                 dd.Bun = false;
             });
 
-            Assert.PropertyChanged(dd, "ketchup", () => {
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Bun = true;
+            });
+
+            Assert.PropertyChanged(dd, "Ketchup", () => {
                 dd.Ketchup = false;
             });
 
-            Assert.PropertyChanged(dd, "mustard", () => {
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Ketchup = true;
+            });
+
+            Assert.PropertyChanged(dd, "Mustard", () => {
                 dd.Mustard = false;
             });
 
-            Assert.PropertyChanged(dd, "pickle", () => {
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Mustard = true;
+            });
+
+            Assert.PropertyChanged(dd, "Pickle", () => {
                 dd.Pickle = false;
             });
 
-            Assert.PropertyChanged(dd, "cheese", () => {
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Pickle = true;
+            });
+
+            Assert.PropertyChanged(dd, "Cheese", () => {
                 dd.Cheese = false;
             });
 
-            Assert.PropertyChanged(dd, "tomato", () => {
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Cheese = true;
+            });
+
+            Assert.PropertyChanged(dd, "Tomato", () => {
                 dd.Tomato = false;
             });
 
-            Assert.PropertyChanged(dd, "lettuce", () => {
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Tomato = true;
+            });
+
+            Assert.PropertyChanged(dd, "Lettuce", () => {
                 dd.Lettuce = false;
             });
 
-            Assert.PropertyChanged(dd, "mayo", () => {
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Lettuce = true;
+            });
+
+            Assert.PropertyChanged(dd, "Mayo", () => {
                 dd.Mayo = false;
+            });
+
+            Assert.PropertyChanged(dd, "SpecialInstructions", () => {
+                dd.Mayo = true;
             });
         }
     }

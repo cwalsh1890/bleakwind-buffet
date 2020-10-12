@@ -20,21 +20,78 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <TextBlock Name="orderNumber" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Arial">
-            Order
-        </TextBlock>
-        <ListBox Name="orderElements" Grid.Row="1" Grid.ColumnSpan="2">
+        <TextBlock Name="orderNumber" Grid.Row="0" Text="{Binding OrderNumberString}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Arial">
             
-        </ListBox>
-        <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" FontFamily="Arial">
-            Sub Total: <LineBreak/>
-            Tax: <LineBreak/>
-            Total:
         </TextBlock>
-        <TextBlock Name="moneyValues" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial">
-            $0.00 <LineBreak/>
-            $0.00 <LineBreak/>
-            $0.00 
-        </TextBlock>
+        <ListView Name="orderElements" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" Grid.Row="1" Grid.ColumnSpan="2" >
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Width="180" Header="item">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Width="200">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="{Binding}"/>
+                                    <ListView Grid.Row="1" ItemsSource="{Binding SpecialInstructions}" >
+                                        <ListView.Resources>
+                                            <Style TargetType="GridViewColumnHeader">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </Style>
+                                        </ListView.Resources>
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn>
+                                                    <TextBlock Text="{Binding}"/>
+                                                </GridViewColumn>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Width="50" Header="price"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" FontFamily="Arial">
+                SubTotal
+            </TextBlock>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" FontFamily="Arial">
+                Tax
+            </TextBlock>
+            <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" FontFamily="Arial">
+                Total
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Text="$" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial"/>
+                <TextBlock Text="{Binding Subtotal}" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Text="$" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial"/>
+                <TextBlock Text="{Binding Tax}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Text="$" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial"/>
+                <TextBlock Text="{Binding Total}" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" FontFamily="Arial"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

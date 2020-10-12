@@ -1,4 +1,6 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Combo;
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Menu;
 using BleakwindBuffet.Data.Sides;
@@ -30,15 +32,69 @@ namespace PointOfSale {
 			InitializeComponent();
 			TypeSelector.Content = new TypeSelector(this);
 			BotControl.Content = new BottomControls(this);
+			Total.Content = new RuningTotal();
 		}
 
 		/// <summary>
 		/// adds item to total
 		/// </summary>
 		public void AddItem() {
-			if (modiferChoices != null) {
-				Total.AddElement(foodItem);
+			if (modiferChoices.Content != null) {
+				if (Total.Content is RuningTotal total) {
+					total.AddElement(foodItem);
+					itemChoice.Content = null;
+					modiferChoices.Content = null;
+				}
 			}
+		}
+
+		/// <summary>
+		/// logic for the add combo button
+		/// </summary>
+		public void AddCombo() {
+			if (modiferChoices.Content != null) {
+				if (Total.Content is RuningTotal total) {
+					if (total.orderElements.SelectedValue is Combo combo) {
+						if (foodItem is IEntreeItem entree)
+							combo.Entree = entree;
+						if (foodItem is IDrinkItem drink)
+							combo.Drink = drink;
+						if (foodItem is ISideItem side)
+							combo.Side = side;
+						itemChoice.Content = null;
+						modiferChoices.Content = null;
+					}
+					else {
+						Combo c = new Combo();
+						if (foodItem is IEntreeItem entree)
+							c.Entree = entree;
+						if (foodItem is IDrinkItem drink)
+							c.Drink = drink;
+						if (foodItem is ISideItem side)
+							c.Side = side;
+						total.AddElement(c);
+						itemChoice.Content = null;
+						modiferChoices.Content = null;
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// removes IOrderItem from total
+		/// </summary>
+		public void RemoveItem() {
+			if (Total.Content is RuningTotal total) {
+				if (total.orderElements.SelectedValue is IOrderItem item) {
+					total.RemoveElement(item);
+				}
+			}
+		}
+
+		public void NewOrder() {
+			Total.Content = new RuningTotal();
+			itemChoice.Content = null;
+			modiferChoices.Content = null;
 		}
 
 		/// <summary>
@@ -111,15 +167,13 @@ namespace PointOfSale {
 		/// used to add soda item to total
 		/// </summary>
 		public void SodaSelected() {
-			DrinkModifiers drinkMod = new DrinkModifiers();
-			drinkMod.creamToggleButton.Visibility = Visibility.Collapsed;
-			drinkMod.lemonToggleButton.Visibility = Visibility.Collapsed;
-			drinkMod.decafToggleButton.Visibility = Visibility.Collapsed;
-			Grid.SetColumnSpan(drinkMod.iceToggleButton, 2);
-			Grid.SetRowSpan(drinkMod.iceToggleButton, 2);
-			SailorSoda foodItem = new SailorSoda();
-			drinkMod.DataContext = foodItem;
-			SailorSodaModifiers sodaMods = new SailorSodaModifiers(drinkMod);
+			SailorSodaModifiers sodaMods = new SailorSodaModifiers();
+			sodaMods.creamToggleButton.Visibility = Visibility.Collapsed;
+			sodaMods.lemonToggleButton.Visibility = Visibility.Collapsed;
+			sodaMods.decafToggleButton.Visibility = Visibility.Collapsed;
+			Grid.SetColumnSpan(sodaMods.iceToggleButton, 2);
+			Grid.SetRowSpan(sodaMods.iceToggleButton, 2);
+			foodItem = new SailorSoda();
 			sodaMods.DataContext = foodItem;
 			modiferChoices.Content = sodaMods;
 		}

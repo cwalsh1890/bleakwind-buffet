@@ -196,20 +196,36 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             SmokehouseSkeleton ss = new SmokehouseSkeleton();
-            Assert.PropertyChanged(ss, "sausage", () => {
+            Assert.PropertyChanged(ss, "SausageLink", () => {
                 ss.SausageLink = false;
             });
 
-            Assert.PropertyChanged(ss, "pancake", () => {
+            Assert.PropertyChanged(ss, "SpecialInstructions", () => {
+                ss.SausageLink = true;
+            });
+
+            Assert.PropertyChanged(ss, "Pancake", () => {
                 ss.Pancake = false;
             });
 
-            Assert.PropertyChanged(ss, "hash brown", () => {
+            Assert.PropertyChanged(ss, "SpecialInstructions", () => {
+                ss.Pancake = true;
+            });
+
+            Assert.PropertyChanged(ss, "HashBrowns", () => {
                 ss.HashBrowns = false;
             });
 
-            Assert.PropertyChanged(ss, "egg", () => {
+            Assert.PropertyChanged(ss, "SpecialInstructions", () => {
+                ss.HashBrowns = true;
+            });
+
+            Assert.PropertyChanged(ss, "Egg", () => {
                 ss.Egg = false;
+            });
+
+            Assert.PropertyChanged(ss, "SpecialInstructions", () => {
+                ss.Egg = true;
             });
         }
     }

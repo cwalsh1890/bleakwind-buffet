@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks {
-	public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged {
+	public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged, IDrinkItem {
 		/// <summary>
 		/// holds the size of the drink
 		/// </summary>
@@ -21,7 +21,7 @@ namespace BleakwindBuffet.Data.Drinks {
 			set {
 				if (size != value) {
 					size = value;
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("size"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
 				}
 			}
 		}
@@ -42,7 +42,8 @@ namespace BleakwindBuffet.Data.Drinks {
 						ice = false;
 						specialInstructions.Add("Hold ice");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ice"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -63,7 +64,8 @@ namespace BleakwindBuffet.Data.Drinks {
 						lemon = false;
 						specialInstructions.Remove("Add lemon");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("lemon"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}

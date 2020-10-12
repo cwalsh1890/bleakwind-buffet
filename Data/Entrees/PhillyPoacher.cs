@@ -10,7 +10,7 @@ using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged {
+	public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged, IEntreeItem {
 		/// <summary>
 		/// holds whether or not the sandwich should have steak
 		/// </summary>
@@ -27,7 +27,8 @@ namespace BleakwindBuffet.Data.Entrees
 						sirloin = false;
 						specialInstructions.Add("Hold sirloin");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("sirloin"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -48,7 +49,8 @@ namespace BleakwindBuffet.Data.Entrees
 						onion = false;
 						specialInstructions.Add("Hold onion");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("onion"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -69,7 +71,8 @@ namespace BleakwindBuffet.Data.Entrees
 						roll = false;
 						specialInstructions.Add("Hold roll");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("roll"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}

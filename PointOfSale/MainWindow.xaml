@@ -31,9 +31,9 @@
         <ContentControl Grid.Column="2" Grid.Row="0" Name="modiferChoices"  Margin="5"  HorizontalAlignment="Stretch">
             
         </ContentControl>
-        <local:RuningTotal x:Name="Total" Grid.Column="3" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch">
+        <ContentControl x:Name="Total" Grid.Column="3" Grid.Row="0" Margin="5"  HorizontalAlignment="Stretch">
             
-        </local:RuningTotal>
+        </ContentControl>
         
     </Grid>
 </Window>

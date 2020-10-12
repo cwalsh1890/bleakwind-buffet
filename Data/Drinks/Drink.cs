@@ -39,7 +39,15 @@ namespace BleakwindBuffet.Data.Drinks {
 		/// <param name="obj">object to compare to drink object</param>
 		/// <returns>bool true if equal false if not equal</returns>
 		public override bool Equals(object obj) {
-			return this.ToString().Equals(obj.ToString());
+			if (obj is Drink d) {
+				bool flag = false;
+				foreach (string s in SpecialInstructions) {
+					if (!d.SpecialInstructions.Contains(s))
+						flag = true;
+				}
+				return this.ToString().Equals(obj.ToString()) && !flag;
+			}
+			return false;
 		}
 	}
 }

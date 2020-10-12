@@ -132,7 +132,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             FriedMiraak fm = new FriedMiraak();
-            Assert.PropertyChanged(fm, "size", () => {
+            Assert.PropertyChanged(fm, "Size", () => {
+                fm.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(fm, "Price", () => {
+                fm.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(fm, "Calories", () => {
                 fm.Size = Size.Large;
             });
         }

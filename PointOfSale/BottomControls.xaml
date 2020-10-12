@@ -16,14 +16,14 @@
         <Button Name="addButton" Click="OnAddClick" Grid.Column="0" FontSize="20" FontFamily="Arial">
             Add
         </Button>
-        <Button Name="editButton" Grid.Column="1" FontSize="20" FontFamily="Arial">
-            Edit
+        <Button Name="addCombo" Click="onNewComboClick" Grid.Column="1" FontSize="20" FontFamily="Arial">
+            Add To Combo
         </Button>
-        <Button Name="removeButton" Grid.Column="2" FontSize="20" FontFamily="Arial">
+        <Button Name="removeButton" Click="onRemoveClick" Grid.Column="2" FontSize="20" FontFamily="Arial">
             Remove
         </Button>
-        <Button Name="totalButton" Grid.Column="3" FontSize="20" FontFamily="Arial">
-            Total
+        <Button Name="newOrder" Click="onNewOrderClick" Grid.Column="3" FontSize="20" FontFamily="Arial">
+            New Order
         </Button>
     </Grid>
 </UserControl>

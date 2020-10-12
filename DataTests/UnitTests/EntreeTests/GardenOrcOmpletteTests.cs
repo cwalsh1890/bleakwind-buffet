@@ -197,20 +197,36 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldNotifyPropertyChanged() {
             GardenOrcOmelette oo = new GardenOrcOmelette();
-            Assert.PropertyChanged(oo, "broccoli", () => {
+            Assert.PropertyChanged(oo, "Broccoli", () => {
                 oo.Broccoli = false;
             });
 
-            Assert.PropertyChanged(oo, "tomato", () => {
+            Assert.PropertyChanged(oo, "SpecialInstructions", () => {
+                oo.Broccoli = true;
+            });
+
+            Assert.PropertyChanged(oo, "Tomato", () => {
                 oo.Tomato = false;
             });
 
-            Assert.PropertyChanged(oo, "mushrooms", () => {
+            Assert.PropertyChanged(oo, "SpecialInstructions", () => {
+                oo.Tomato = true;
+            });
+
+            Assert.PropertyChanged(oo, "Mushrooms", () => {
                 oo.Mushrooms = false;
             });
 
-            Assert.PropertyChanged(oo, "cheddar", () => {
+            Assert.PropertyChanged(oo, "SpecialInstructions", () => {
+                oo.Mushrooms = true;
+            });
+
+            Assert.PropertyChanged(oo, "Cheddar", () => {
                 oo.Cheddar = false;
+            });
+
+            Assert.PropertyChanged(oo, "SpecialInstructions", () => {
+                oo.Cheddar = true;
             });
         }
     }

@@ -13,6 +13,8 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
+using BleakwindBuffet.Data.Combo;
 
 namespace BleakwindBuffet.DataTests.UnitTests.Menu_Tests {
     public class MenuTests {
@@ -247,5 +249,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.Menu_Tests {
             vs.Size = Size.Large;
             Assert.Contains(vs, list);
         }
-	}
+
+        [Fact]
+        public void AllItemsImplementINotifyPropertyChanged() {
+            List<IOrderItem> list = Menu.FullMenu();
+
+            foreach (IOrderItem item in list) {
+                Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
+            }
+        }
+    }
 }

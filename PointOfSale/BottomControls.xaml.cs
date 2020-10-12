@@ -25,5 +25,17 @@ namespace PointOfSale {
 		void OnAddClick(object sender, RoutedEventArgs e) {
 			mainWindow.AddItem();
 		}
+
+		void onNewComboClick(object sender, RoutedEventArgs e) {
+			mainWindow.AddCombo();
+		}
+
+		void onRemoveClick(object sender, RoutedEventArgs e) {
+			mainWindow.RemoveItem();
+		}
+
+		void onNewOrderClick(object sender, RoutedEventArgs e) {
+			mainWindow.NewOrder();
+		}
 	}
 }

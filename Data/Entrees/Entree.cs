@@ -33,7 +33,15 @@ namespace BleakwindBuffet.Data.Entrees {
 		/// <param name="obj">object to compare to entree object</param>
 		/// <returns>bool true if equal false if not equal</returns>
 		public override bool Equals(object obj) {
-			return this.ToString().Equals(obj.ToString());
+			if (obj is Entree e) {
+				bool flag = false;
+				foreach (string s in SpecialInstructions) {
+					if (!e.SpecialInstructions.Contains(s))
+						flag = true;
+				}
+				return this.ToString().Equals(obj.ToString()) && !flag;
+			}
+			return false;
 		}
 	}
 }

@@ -10,7 +10,7 @@ using BleakwindBuffet.Data.Menu;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-	public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged {
+	public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged, IEntreeItem {
 		/// <summary>
 		/// holds whether or not the plate should have sausage links
 		/// </summary>
@@ -28,7 +28,8 @@ namespace BleakwindBuffet.Data.Entrees
 						specialInstructions.Add("Hold sausage");
 					}
 				}
-				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("sausage"));
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 			}
 		}
 
@@ -48,7 +49,8 @@ namespace BleakwindBuffet.Data.Entrees
 						egg = false;
 						specialInstructions.Add("Hold eggs");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("egg"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
@@ -69,7 +71,9 @@ namespace BleakwindBuffet.Data.Entrees
 						hashBrowns = false;
 						specialInstructions.Add("Hold hash browns");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("hash brown"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
 				}
 			}
 		}
@@ -90,7 +94,8 @@ namespace BleakwindBuffet.Data.Entrees
 						pancake = false;
 						specialInstructions.Add("Hold pancakes");
 					}
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("pancake"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
 				}
 			}
 		}
