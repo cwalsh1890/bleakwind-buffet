@@ -12,6 +12,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button Name="addButton" Click="OnAddClick" Grid.Column="0" FontSize="20" FontFamily="Arial">
             Add
@@ -23,7 +24,10 @@
             Remove
         </Button>
         <Button Name="newOrder" Click="onNewOrderClick" Grid.Column="3" FontSize="20" FontFamily="Arial">
-            New Order
+            Cancel Order
+        </Button>
+        <Button Name="completeOrder" Click="onCompleteOrderClick" Grid.Column="4" FontSize="20" FontFamily="Arial">
+            Complete Order
         </Button>
     </Grid>
 </UserControl>

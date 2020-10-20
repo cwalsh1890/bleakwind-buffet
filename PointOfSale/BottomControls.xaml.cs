@@ -37,5 +37,9 @@ namespace PointOfSale {
 		void onNewOrderClick(object sender, RoutedEventArgs e) {
 			mainWindow.NewOrder();
 		}
+
+		void onCompleteOrderClick(object sender, RoutedEventArgs e) {
+			mainWindow.CompleteOrder();
+		}
 	}
 }

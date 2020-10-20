@@ -4,6 +4,7 @@ using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Menu;
 using BleakwindBuffet.Data.Sides;
+using PointOfSale.Cash;
 using PointOfSale.Drink;
 using PointOfSale.Entree;
 using PointOfSale.Side;
@@ -30,7 +31,7 @@ namespace PointOfSale {
 		IOrderItem foodItem;
 		public MainWindow() {
 			InitializeComponent();
-			TypeSelector.Content = new TypeSelector(this);
+			typeSelector.Content = new TypeSelector(this);
 			BotControl.Content = new BottomControls(this);
 			Total.Content = new RuningTotal();
 		}
@@ -95,6 +96,11 @@ namespace PointOfSale {
 			Total.Content = new RuningTotal();
 			itemChoice.Content = null;
 			modiferChoices.Content = null;
+		}
+
+		public void CompleteOrder() {
+			typeSelector.Content = null;
+			itemChoice.Content = new PaymentOptions(this);
 		}
 
 		/// <summary>
@@ -307,6 +313,63 @@ namespace PointOfSale {
 			foodItem = new ThugsTBone();
 			foodMods.DataContext = foodItem;
 			modiferChoices.Content = foodMods;
+		}
+
+		public void PayWithCash() {
+			if (Total.Content is RuningTotal rt) {
+				if (rt.DataContext is Order or) {
+					modiferChoices.Content = new CashPayment(or.Total, this);
+				}
+			}
+		}
+
+		public void ReturnToOrder() {
+			typeSelector.Content = new TypeSelector(this);
+			itemChoice.Content = null;
+			modiferChoices.Content = null;
+		}
+
+		public void FinalizeCashSale(Register register) {
+			register.UpdateRegister();
+			PrintOrder();
+			RoundRegister.RecieptPrinter.PrintLine("Paid with: Cash");
+			RoundRegister.RecieptPrinter.PrintLine("Amount Given:  $" + register.CountCustomerPayment());
+			RoundRegister.RecieptPrinter.PrintLine("Change due:    $" + register.ChangeDue);
+			RoundRegister.RecieptPrinter.CutTape();
+			typeSelector.Content = new TypeSelector(this);
+			NewOrder();
+		}
+
+		public void PayWithCard() {
+			if (Total.Content is RuningTotal rt) {
+				if (rt.DataContext is Order order) {
+					if (RoundRegister.CardReader.RunCard(order.Total) == RoundRegister.CardTransactionResult.Approved) {
+						PrintOrder();
+						RoundRegister.RecieptPrinter.PrintLine("Paid with: Card");
+						RoundRegister.RecieptPrinter.PrintLine("Card Approved");
+						RoundRegister.RecieptPrinter.CutTape();
+						typeSelector.Content = new TypeSelector(this);
+						NewOrder();
+					}
+				}
+			}
+		}
+
+		private void PrintOrder() {
+			RoundRegister.RecieptPrinter.PrintLine("Bleakwind Buffet");
+			if (Total.Content is RuningTotal rt) {
+				if (rt.DataContext is Order order) {
+					foreach (IOrderItem item in order) {
+						RoundRegister.RecieptPrinter.PrintLine(item.ToString() + " " + item.Price.ToString());
+						foreach (string s in item.SpecialInstructions) {
+							RoundRegister.RecieptPrinter.PrintLine("   " + s);
+						}
+					}
+					RoundRegister.RecieptPrinter.PrintLine("Subtotal   $" + order.Subtotal.ToString());
+					RoundRegister.RecieptPrinter.PrintLine("Tax        $" + order.Tax.ToString());
+					RoundRegister.RecieptPrinter.PrintLine("Total      $" + order.Total.ToString());
+				}
+			}
 		}
 	}
 }
