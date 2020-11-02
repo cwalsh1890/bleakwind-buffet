@@ -1,0 +1,128 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>
+    Welcome to the Bleakwind Buffet
+</h1>
+
+<p>
+    We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!
+</p>
+
+<h1>
+    Our Menu
+</h1>
+
+<h2>
+    Entrees
+</h2>
+
+<ul class="order-item-list">
+    <li>
+        <div class="item-name">
+            <h3></h3>
+        </div>
+        <div class="item-info">
+            <div class="price">Price</div>
+            <div class="calories">Calories</div>
+        </div>
+    </li>
+    @foreach (BleakwindBuffet.Data.Menu.IOrderItem entree in BleakwindBuffet.Data.Menu.Menu.Entrees())
+    {
+        <li>
+            <div class="item-name">
+                <h3>@entree.ToString()</h3>
+            </div>
+            <div class="item-info">
+                <div class="price">$@entree.Price</div>
+                <div class="calories">@entree.Calories</div>
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>
+    Sides
+</h2>
+
+<ul class="order-item-list">
+    @foreach (BleakwindBuffet.Data.Menu.IOrderItem side in BleakwindBuffet.Data.Menu.Menu.SmallSides())
+    {
+        <li>
+            <div class="item-name">
+                <h3>@(side.ToString().Remove(0,5))</h3>
+            </div>
+            <div class="sized-item-info">
+                <div>Size</div>
+                <div>Price</div>
+                <div>Calories</div>
+
+                <div class="size">@(((BleakwindBuffet.Data.Sides.Side)side).Size)</div>
+                <div class="price">$@side.Price</div>
+                <div class="calories">@side.Calories</div>
+
+                <div class="size">@(((BleakwindBuffet.Data.Sides.Side)side).Size = BleakwindBuffet.Data.Enums.Size.Medium)</div>
+                <div class="price">$@side.Price</div>
+                <div class="calories">@side.Calories</div>
+
+                <div class="size">@(((BleakwindBuffet.Data.Sides.Side)side).Size = BleakwindBuffet.Data.Enums.Size.Large)</div>
+                <div class="price">$@side.Price</div>
+                <div class="calories">@side.Calories</div>
+            </div>
+
+        </li>
+     }
+</ul>
+
+<h2>
+    Drinks
+</h2>
+
+<ul class="order-item-list">
+    @foreach (BleakwindBuffet.Data.Menu.IOrderItem drink in BleakwindBuffet.Data.Menu.Menu.SmallDrinks())
+    {
+        <li>
+            <div class="item-name">
+                <h3>
+                    @if (drink is BleakwindBuffet.Data.Drinks.SailorSoda)
+                    {
+                        @(drink.ToString().Remove(0,12))
+                    }
+                    else { 
+                        @(drink.ToString().Remove(0,5))
+                    }
+                </h3>
+            </div>
+            <div class="sized-item-info">
+                <div>Size</div>
+                <div>Price</div>
+                <div>Calories</div>
+
+                <div class="size">@(((BleakwindBuffet.Data.Drinks.Drink)drink).Size)</div>
+                <div class="price">$@drink.Price</div>
+                <div class="calories">@drink.Calories</div>
+
+                <div class="size">@(((BleakwindBuffet.Data.Drinks.Drink)drink).Size = BleakwindBuffet.Data.Enums.Size.Medium)</div>
+                <div class="price">$@drink.Price</div>
+                <div class="calories">@drink.Calories</div>
+
+                <div class="size">@(((BleakwindBuffet.Data.Drinks.Drink)drink).Size = BleakwindBuffet.Data.Enums.Size.Large)</div>
+                <div class="price">$@drink.Price</div>
+                <div class="calories">@drink.Calories</div>
+            </div>
+        </li>
+     }
+</ul>
+
+<h2>
+    Make it a Combo
+</h2>
+
+<p>
+    By adding a side and a drink to any puchase of an Entree you can make a it a combo and take $1 off the total of your meal
+</p>
+
+

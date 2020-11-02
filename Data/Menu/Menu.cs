@@ -76,6 +76,24 @@ namespace BleakwindBuffet.Data.Menu {
 			return items;
 		}
 
+		public static List<IOrderItem> SmallSides()
+		{
+			List<IOrderItem> items = new List<IOrderItem>();
+			DragonbornWaffleFries wf = new DragonbornWaffleFries();
+			items.Add(wf);
+
+			FriedMiraak fm = new FriedMiraak();
+			items.Add(fm);
+
+			MadOtarGrits og = new MadOtarGrits();
+			items.Add(og);
+
+			VokunSalad vs = new VokunSalad();
+			items.Add(vs);
+
+			return items;
+		}
+
 		/// <summary>
 		/// returns all possible drinks from the menus
 		/// </summary>
@@ -188,6 +206,27 @@ namespace BleakwindBuffet.Data.Menu {
 
 			return items;
 		}
+		public static List<IOrderItem> SmallDrinks()
+		{
+			List<IOrderItem> items = new List<IOrderItem>();
+			ArentinoAppleJuice aj = new ArentinoAppleJuice();
+			items.Add(aj);
+
+			CandlehearthCoffee cc = new CandlehearthCoffee();
+			items.Add(cc);
+
+			MarkarthMilk mm = new MarkarthMilk();
+			items.Add(mm);
+
+			WarriorWater ww = new WarriorWater();
+			items.Add(ww);
+
+			SailorSoda ss = new SailorSoda();
+			items.Add(ss);
+
+			return items;
+		}
+		
 
 		/// <summary>
 		/// returns all possible menu items
