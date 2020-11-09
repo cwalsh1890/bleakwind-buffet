@@ -12,110 +12,156 @@
     We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!
 </p>
 
-<h1>
-    Our Menu
-</h1>
+<form id="menu-explore">
 
-<h2>
-    Entrees
-</h2>
-
-<ul class="order-item-list">
-    <li>
-        <div class="item-name">
-            <h3></h3>
+    <div class="filters">
+        <div id="search">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search">
         </div>
-        <div class="item-info">
-            <div class="price">Price</div>
-            <div class="calories">Calories</div>
+
+        <h4>Item Type</h4>
+        <label>
+            <input type="checkbox" name="ItemType" value="Entree" checked="@Model.ItemType.Contains("Entree")" />
+            Entree
+        </label>
+        <label>
+            <input type="checkbox" name="ItemType" value="Side" checked="@Model.ItemType.Contains("Side")" />
+            Side
+        </label>
+        <label>
+            <input type="checkbox" name="ItemType" value="Drink" checked="@Model.ItemType.Contains("Drink")" />
+            Drink
+        </label>
+
+        <h4>Calories</h4>
+        <div>
+            Between
+            <input name="CalorieMin" type="number" min="0" max="9999" step="1" placeholder="min" value="@Model.CalorieMin" />
+            and
+            <input name="CalorieMax" type="number" min="0" max="9999" step="1" placeholder="max" value="@Model.CalorieMax" />
         </div>
-    </li>
-    @foreach (BleakwindBuffet.Data.Menu.IOrderItem entree in BleakwindBuffet.Data.Menu.Menu.Entrees())
-    {
-        <li>
-            <div class="item-name">
-                <h3>@entree.ToString()</h3>
-            </div>
-            <div class="item-info">
-                <div class="price">$@entree.Price</div>
-                <div class="calories">@entree.Calories</div>
-            </div>
-        </li>
-    }
-</ul>
 
-<h2>
-    Sides
-</h2>
+        <h4>Price</h4>
+        <div>
+            Between
+            <input name="PriceMin" type="number" min="0" max="100" step="0.01" placeholder="min" value="@Model.PriceMin" />
+            and
+            <input name="PriceMax" type="number" min="0" max="100" step="0.01" placeholder="max" value="@Model.PriceMax" />
+        </div>
+    </div>
 
-<ul class="order-item-list">
-    @foreach (BleakwindBuffet.Data.Menu.IOrderItem side in BleakwindBuffet.Data.Menu.Menu.SmallSides())
-    {
-        <li>
-            <div class="item-name">
-                <h3>@(side.ToString().Remove(0,5))</h3>
-            </div>
-            <div class="sized-item-info">
-                <div>Size</div>
-                <div>Price</div>
-                <div>Calories</div>
+    <div class="menu">
+        <h1>
+            Our Menu
+        </h1>
 
-                <div class="size">@(((BleakwindBuffet.Data.Sides.Side)side).Size)</div>
-                <div class="price">$@side.Price</div>
-                <div class="calories">@side.Calories</div>
+        <h2>
+            Entrees
+        </h2>
 
-                <div class="size">@(((BleakwindBuffet.Data.Sides.Side)side).Size = BleakwindBuffet.Data.Enums.Size.Medium)</div>
-                <div class="price">$@side.Price</div>
-                <div class="calories">@side.Calories</div>
+        <ul class="order-item-list">
+            <li>
+                <div class="item-name">
+                    <h3></h3>
+                </div>
+                <div class="item-info">
+                    <div class="price">Price</div>
+                    <div class="calories">Calories</div>
+                </div>
+            </li>
+            @foreach (BleakwindBuffet.Data.Menu.IOrderItem entree in @Model.Entrees)
+            {
+                <li>
+                    <div class="item-name">
+                        <h3>@entree.ToString()</h3>
+                    </div>
+                    <div class="item-info">
+                        <div class="price">$@entree.Price</div>
+                        <div class="calories">@entree.Calories</div>
+                    </div>
+                </li>
+            }
+        </ul>
 
-                <div class="size">@(((BleakwindBuffet.Data.Sides.Side)side).Size = BleakwindBuffet.Data.Enums.Size.Large)</div>
-                <div class="price">$@side.Price</div>
-                <div class="calories">@side.Calories</div>
-            </div>
+        <h2>
+            Sides
+        </h2>
 
-        </li>
-     }
-</ul>
+        <ul class="order-item-list">
+            <li>
+                <div class="item-name">
+                    <h3></h3>
+                </div>
+                <div class="item-info">
+                    <div class="price">Price</div>
+                    <div class="calories">Calories</div>
+                </div>
+            </li>
+            @foreach (BleakwindBuffet.Data.Menu.IOrderItem side in @Model.Sides)
+            {
+                <li>
+                    <div class="item-name">
+                        <h3>@(side.ToString())</h3>
+                    </div>
+                    <div class="item-info">
 
-<h2>
-    Drinks
-</h2>
+                        <div class="price">$@side.Price</div>
+                        <div class="calories">@side.Calories</div>
 
-<ul class="order-item-list">
-    @foreach (BleakwindBuffet.Data.Menu.IOrderItem drink in BleakwindBuffet.Data.Menu.Menu.SmallDrinks())
-    {
-        <li>
-            <div class="item-name">
-                <h3>
-                    @if (drink is BleakwindBuffet.Data.Drinks.SailorSoda)
-                    {
-                        @(drink.ToString().Remove(0,12))
-                    }
-                    else { 
-                        @(drink.ToString().Remove(0,5))
-                    }
-                </h3>
-            </div>
-            <div class="sized-item-info">
-                <div>Size</div>
-                <div>Price</div>
-                <div>Calories</div>
+                    </div>
 
-                <div class="size">@(((BleakwindBuffet.Data.Drinks.Drink)drink).Size)</div>
-                <div class="price">$@drink.Price</div>
-                <div class="calories">@drink.Calories</div>
+                </li>
+            }
+        </ul>
 
-                <div class="size">@(((BleakwindBuffet.Data.Drinks.Drink)drink).Size = BleakwindBuffet.Data.Enums.Size.Medium)</div>
-                <div class="price">$@drink.Price</div>
-                <div class="calories">@drink.Calories</div>
+        <h2>
+            Drinks
+        </h2>
 
-                <div class="size">@(((BleakwindBuffet.Data.Drinks.Drink)drink).Size = BleakwindBuffet.Data.Enums.Size.Large)</div>
-                <div class="price">$@drink.Price</div>
-                <div class="calories">@drink.Calories</div>
-            </div>
-        </li>
-     }
-</ul>
+        <ul class="order-item-list">
+            @foreach (BleakwindBuffet.Data.Menu.IOrderItem drink in @Model.Drinks)
+            {
+                <li>
+                    <div class="item-name">
+                        <h3>
+                            @if (drink is BleakwindBuffet.Data.Drinks.SailorSoda ss)
+                            {
+                                @(drink.ToString().Remove(6,7))
+                            }
+                            else
+                            {
+                                @(drink.ToString())
+                            }
+                        </h3>
+                    </div>
+                    <div class="item-info">
+
+                        <div class="price">$@drink.Price</div>
+                        <div class="calories">@drink.Calories</div>
+
+                    </div>
+                </li>
+            }
+        </ul>
+
+        <h3>
+            Soda Flavors
+        </h3>
+        <ul>
+            @foreach (BleakwindBuffet.Data.Enums.SodaFlavor flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+            {
+                <li>
+                    <h4>
+                        @flavor
+                    </h4>
+                </li>
+            }
+        </ul>
+
+    </div>
+
+</form>
 
 <h2>
     Make it a Combo

@@ -61,6 +61,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  width: auto;
 }
 .footer {
   position: absolute;
@@ -95,4 +96,19 @@ body {
 .sized-item-info {
     display: grid;
     grid-template-columns: auto auto auto;
+}
+
+form#menu-explore {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.holder {
+    margin: 0px 50px;
 }
