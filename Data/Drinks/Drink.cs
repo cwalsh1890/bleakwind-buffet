@@ -49,5 +49,11 @@ namespace BleakwindBuffet.Data.Drinks {
 			}
 			return false;
 		}
+		public virtual bool TypeEquals(object obj)
+		{
+			int i = this.ToString().IndexOf(' ');
+			int j = obj.ToString().IndexOf(' ');
+			return this.ToString().Remove(0, i).Equals(obj.ToString().Remove(0, j));
+		}
 	}
 }

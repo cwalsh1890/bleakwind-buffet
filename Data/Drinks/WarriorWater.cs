@@ -89,6 +89,17 @@ namespace BleakwindBuffet.Data.Drinks {
 		}
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+		{
+			get
+			{
+				return "It’s water. Just water.";
+			}
+		}
+
+		/// <summary>
 		/// list of special instructions to be returned 
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

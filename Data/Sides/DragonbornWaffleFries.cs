@@ -63,6 +63,17 @@ namespace BleakwindBuffet.Data.Sides {
 		}
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+		{
+			get
+			{
+				return "Crispy fried potato waffle fries.";
+			}
+		}
+
+		/// <summary>
 		/// list of special instructions to be returned 
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

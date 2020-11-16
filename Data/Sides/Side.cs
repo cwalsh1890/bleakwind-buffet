@@ -41,5 +41,12 @@ namespace BleakwindBuffet.Data.Sides {
 		public override bool Equals(object obj) {
 			return this.ToString().Equals(obj.ToString());
 		}
+
+		public virtual bool TypeEquals(object obj)
+        {
+			int i = this.ToString().IndexOf(' ');
+			int j = obj.ToString().IndexOf(' ');
+			return this.ToString().Remove(0, i).Equals(obj.ToString().Remove(0, j));
+        }
 	}
 }

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Menu {
 	/// <summary>
 	/// interface for side item
 	/// </summary>
-	public interface ISideItem : INotifyPropertyChanged{
+	public interface ISideItem : INotifyPropertyChanged , ISizeable {
 		/// <summary>
 		/// price of the side item
 		/// </summary>
@@ -16,8 +17,9 @@ namespace BleakwindBuffet.Data.Menu {
 		/// calories of the side item
 		/// </summary>
 		uint Calories { get; }
+		Size Size { get; set; }
 		/// <summary>
-		/// special instructions to make the side item
+		/// size of the object
 		/// </summary>
 		List<string> SpecialInstructions { get; }
 

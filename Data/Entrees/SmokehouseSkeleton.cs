@@ -111,6 +111,17 @@ namespace BleakwindBuffet.Data.Entrees
 		public override uint Calories { get; } = 602;
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+		{
+			get
+			{
+				return "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+			}
+		}
+
+		/// <summary>
 		/// holds any special instructions for the plate
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

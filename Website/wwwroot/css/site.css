@@ -83,6 +83,14 @@ body {
     align-items: flex-start;
 }
 
+.size-info-list  {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 .item-info {
     display: flex;
     flex-direction: row;
@@ -98,6 +106,11 @@ body {
     grid-template-columns: auto auto auto;
 }
 
+.menu-categories {
+    display: flex;
+    flex-direction: row;
+}
+
 form#menu-explore {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -111,4 +124,10 @@ form#menu-explore {
 
 .holder {
     margin: 0px 50px;
+}
+
+@media (max-width: 490px) {
+    .menu-categories {
+        flex-direction: column;
+    }
 }

@@ -137,6 +137,17 @@ namespace BleakwindBuffet.Data.Entrees
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+		{
+			get
+			{
+				return "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
+			}
+		}
+
+		/// <summary>
 		/// holds any special instructions for the burger
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

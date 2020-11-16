@@ -99,6 +99,17 @@ namespace BleakwindBuffet.Data.Drinks {
 		}
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+		{
+			get
+			{
+				return "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.";
+			}
+		}
+
+		/// <summary>
 		/// holds any special instructions for the drink
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

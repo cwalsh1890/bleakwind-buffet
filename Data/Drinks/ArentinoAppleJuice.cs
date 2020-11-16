@@ -87,6 +87,17 @@ namespace BleakwindBuffet.Data.Drinks {
 		}
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+        {
+			get
+            {
+				return "Fresh squeezed apple juice.";
+			}
+        }
+
+		/// <summary>
 		/// holds any special instructions for making the drink
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

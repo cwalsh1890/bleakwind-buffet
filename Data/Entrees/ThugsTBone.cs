@@ -22,6 +22,17 @@ namespace BleakwindBuffet.Data.Entrees
 		public override uint Calories { get; } = 982;
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+		{
+			get
+			{
+				return "Juicy T-Bone, not much else to say.";
+			}
+		}
+
+		/// <summary>
 		/// holds any special instructions for the steak
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

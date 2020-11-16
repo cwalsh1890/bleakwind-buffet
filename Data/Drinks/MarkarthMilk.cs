@@ -86,6 +86,17 @@ namespace BleakwindBuffet.Data.Drinks {
 		}
 
 		/// <summary>
+		/// holds a description for the food item
+		/// </summary>
+		public string Description
+		{
+			get
+			{
+				return "Hormone-free organic 2% milk.";
+			}
+		}
+
+		/// <summary>
 		/// holds any specific instructions for the different drinks
 		/// </summary>
 		private List<string> specialInstructions = new List<string>();

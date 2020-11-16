@@ -126,6 +126,14 @@ namespace BleakwindBuffet.Data.Combo {
 			}
 		}
 
+		public string Description
+        {
+			get
+            {
+				return "";
+            }
+        }
+
 		/// <summary>
 		/// any special instructions for making the combo
 		/// </summary>

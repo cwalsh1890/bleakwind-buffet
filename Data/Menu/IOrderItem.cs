@@ -23,6 +23,10 @@ namespace BleakwindBuffet.Data.Menu {
 		/// </summary>
 		uint Calories { get; }
 		/// <summary>
+		/// description of the item
+		/// </summary>
+		string Description { get; }
+		/// <summary>
 		/// any special instructions for preparing the item
 		/// </summary>
 		List<string> SpecialInstructions { get; }
